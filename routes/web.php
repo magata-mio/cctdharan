@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CampusProfileController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\FacultyMemberController;
 use App\Http\Controllers\Admin\NonTeachingStaffController;
@@ -27,6 +28,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 // Notice Category
 Route::resource('categories',NoticeCategoryController::class);
 
@@ -42,6 +44,9 @@ Route::resource('fmembers',FacultyMemberController::class);
 // Nont Teaching Staff
 Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
 
+// Profile of Campuse 
+Route::resource('campusprofile',CampusProfileController::class);
+
 
 /**
  * Front End Route
@@ -53,4 +58,7 @@ Route::get('onlineform',[PageController::class,'onlineform']);
 // Department
 Route::get('departments',[PageController::class,'department']);
 Route::get('sdepartments/{id}',[PageController::class,'show']);
+
+// Campus Profile
+Route::get('cprofile',[PageController::class,'cprofile']);
 

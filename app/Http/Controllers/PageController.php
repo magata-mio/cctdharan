@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CampusProfile;
 use App\Models\Department;
 use App\Models\FacultyMember;
 use Illuminate\Http\Request;
@@ -38,5 +39,12 @@ class PageController extends Controller
     {
         $department = Department::findOrFail($id);
         return view('frontend.department.show',compact('department'));
+    }
+
+    // Campus Profile
+    public function cprofile()
+    {
+        $profile = CampusProfile::first();
+        return view('frontend.campusprofile.index',compact('profile'));
     }
 }
