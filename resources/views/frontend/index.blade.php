@@ -76,9 +76,9 @@
             <h4>Notice Board</h4>
             <div class="col-md-4">
                 <ul class="list-unstyled">
-                    <li class="text-primary"><i class="fas fa-check"></i><a href="" class="text-decoration-none"> Notice (General)</a></li>
-                    <li class="text-primary"><i class="fas fa-check"></i><a href="" class="text-decoration-none"> Notice (Departmental)</a></li>
-                    <li class="text-primary"><i class="fas fa-check"></i><a href="" class="text-decoration-none"> Notice (Result Publication)</a></li>
+                    @foreach ($categories as $category)
+                    <li class="text-primary"><i class="fas fa-check"></i> <a href="{{ route('frontend.notice-category',$category->id) }}" class="text-decoration-none">{{ $category->name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>

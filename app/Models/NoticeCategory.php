@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class NoticeCategory extends Model
 {
     use HasFactory;
+    public function notices(){
+        return $this->hasMany(Notice::class,'notice_category_id');
+    }
 }

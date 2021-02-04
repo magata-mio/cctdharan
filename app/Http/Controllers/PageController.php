@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FacultyMember;
 use App\Models\Notice;
+use App\Models\NoticeCategory;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -32,5 +33,10 @@ class PageController extends Controller
      public function notice($id){
          $notice = Notice::findOrFail($id);
          return view('frontend.notice.show',compact('notice'));
+     }
+     public function noticeCategory($id){
+         $category = NoticeCategory::findOrFail($id);
+         $category->load('notices');
+         return view('frontend.notice-category.show',compact('category'));
      }
 }
