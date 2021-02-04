@@ -50,3 +50,7 @@ Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
 Route::get('faculties-member',[PageController::class,'getFacultiesMember']);
 Route::get('onlineform',[PageController::class,'onlineform']);
 
+// Department
+Route::get('departments',[PageController::class,'department']);
+Route::get('sdepartments/{id}',[PageController::class,'show']);
+

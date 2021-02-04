@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\FacultyMember;
 use Illuminate\Http\Request;
 
@@ -24,4 +25,18 @@ class PageController extends Controller
      {
          return view('frontend.onlineform.create');
      }
+
+    //  Department List
+    public function department()
+    {
+        $departments = Department::all();
+        return view('frontend.department.index',compact('departments'));
+    }
+
+    // Show Single Department
+    public function show($id)
+    {
+        $department = Department::findOrFail($id);
+        return view('frontend.department.show',compact('department'));
+    }
 }
