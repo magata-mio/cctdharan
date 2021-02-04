@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\FacultyMember;
+use App\Models\Notice;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public $notices;
+
     /**
      * Get All Faculties Members
      */
     public function getFacultiesMember()
     {
+        $notices = Notice::all();
         $fmembers = FacultyMember::paginate(500000);
-        return view('frontend.members.faculties-members',compact('fmembers'));
+        return view('frontend.members.faculties-members',compact('fmembers','notices'));
     }
 
     /**
@@ -23,5 +27,10 @@ class PageController extends Controller
      public function onlineform()
      {
          return view('frontend.onlineform.create');
+     }
+
+     public function notice($id){
+         $notice = Notice::findOrFail($id);
+         return view('frontend.notice.show',compact('notice'));
      }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\NonTeachingStaffController;
 use App\Http\Controllers\Admin\NoticeCategoryController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\PageController;
+use App\Models\Notice;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.index');
+    $notices = Notice::all();
+    return view('frontend.index',compact('notices'));
 });
 
 Auth::routes();
@@ -53,4 +55,6 @@ Route::resource('noticecategories',AdminNoticeCategoryController::class);
  */
 Route::get('faculties-member',[PageController::class,'getFacultiesMember']);
 Route::get('onlineform',[PageController::class,'onlineform']);
+Route::get('notice/{id}',[PageController::class,'notice'])->name('frontend.notice');
+
 
