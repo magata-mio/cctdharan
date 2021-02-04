@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CampusProfile;
 use App\Models\Department;
 use App\Models\FacultyMember;
 use App\Models\Notice;
@@ -56,6 +57,8 @@ class PageController extends Controller
         return view('frontend.department.show',compact('department'));
     }
 
+
     
+
 
 }

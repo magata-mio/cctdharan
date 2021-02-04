@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\Admin\AdminNoticeCategoryController;
 use App\Http\Controllers\Admin\AdminPopupController;
 use App\Http\Controllers\Admin\DepartmentController;
@@ -36,6 +37,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 // Notice Category
 Route::resource('categories',NoticeCategoryController::class);
 
@@ -51,10 +53,12 @@ Route::resource('fmembers',FacultyMemberController::class);
 // Nont Teaching Staff
 Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
 
+
 //Notice Category
 Route::resource('noticecategories',AdminNoticeCategoryController::class);
 
 Route::resource('popups',AdminPopupController::class);
+
 
 /**
  * Front End Route
@@ -69,4 +73,7 @@ Route::get('notice-category/{id}',[PageController::class,'noticeCategory'])->nam
 // Department
 Route::get('departments',[PageController::class,'department']);
 Route::get('sdepartments/{id}',[PageController::class,'show']);
+
+// Campus Profile
+Route::get('cprofile',[PageController::class,'cprofile']);
 
