@@ -7,20 +7,19 @@
                     Add Department
                 </div>
                 <div class="card-body">
-                    <form action="/departments" method="post">
+                    <form action="/departments/{{ $department->id }}" method="post">
                         @csrf
+                        @method('put')
                         <div class="form-group">
                             <label for="name">Department Name</label>
-                            <input id="name" class="form-control" type="text" name="name" placeholder="Department Name">
+                            <input id="name" class="form-control" type="text" name="name" placeholder="Department Name" value="{{ $department->name }}">
                         </div>
 
                         <div class="form-group">
                             <label for="my-textarea">Description</label>
-                            <textarea id="my-textarea" class="form-control ckeditor" name="description" rows="3"></textarea>
+                            <textarea id="my-textarea" class="form-control ckeditor" name="description" rows="3">{{ $department->description }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        
-
                     </form>
                 </div>
             </div>

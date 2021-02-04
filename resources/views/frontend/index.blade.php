@@ -72,14 +72,19 @@
 
         <div class="container py-5">
              {{-- Notice Section --}}
+             <h4>Notice Board</h4>
         <div class="row">
-            <h4>Notice Board</h4>
             <div class="col-md-4">
                 <ul class="list-unstyled">
                     @foreach ($categories as $category)
                     <li class="text-primary"><i class="fas fa-check"></i> <a href="{{ route('frontend.notice-category',$category->id) }}" class="text-decoration-none">{{ $category->name }}</a></li>
                     @endforeach
                 </ul>
+            </div>
+            
+            <div class="col-md-8">
+                <h5>Online Registration Form</h5>
+                <a href="" class="text-decoration-none">Click Here</a>
             </div>
         </div>
         </div>
@@ -126,7 +131,7 @@
             </div>
             @if ($popup->link)
             <div class="modal-footer">
-                <a href="{!! $popup->link !!}" class="btn btn-primary">
+                <a href="{!! $popup->link !!}" class="btn btn-danger" >
                     Apply Now    
                 </a>
               </div>

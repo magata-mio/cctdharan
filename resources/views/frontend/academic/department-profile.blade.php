@@ -1,6 +1,9 @@
 @extends('frontend.templates.app')
 
 @section('content')
+    <div class="container mt-5">
+        <h1>{{ $department->name }}</h1>
+    </div>
     <div class="container">
         {!! $department->description !!}
     </div>
