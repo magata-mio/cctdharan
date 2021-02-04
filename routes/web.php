@@ -1,19 +1,23 @@
 <?php
 
-
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminNoticeCategoryController;
 use App\Http\Controllers\Admin\AdminPopupController;
+use App\Http\Controllers\Admin\CampusProfileController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\FacultyMemberController;
 use App\Http\Controllers\Admin\NonTeachingStaffController;
 use App\Http\Controllers\Admin\NoticeCategoryController;
 use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\PedagogyController;
 use App\Http\Controllers\PageController;
+use App\Models\About;
 use App\Models\CampusProfile;
 use App\Models\Department;
 use App\Models\FacultyMember;
 use App\Models\Notice;
 use App\Models\NoticeCategory;
+use App\Models\Pedagogy;
 use App\Models\Popup;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -41,8 +45,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// Notice Category
-Route::resource('categories',NoticeCategoryController::class);
 
 // Notice
 Route::resource('notices',NoticeController::class);
@@ -56,11 +58,17 @@ Route::resource('fmembers',FacultyMemberController::class);
 // Nont Teaching Staff
 Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
 
+// Campus profile
+Route::resource('cprofile',CampusProfileController::class);
+
+Route::resource('pedagogy',PedagogyController::class);
+
 
 //Notice Category
 Route::resource('noticecategories',AdminNoticeCategoryController::class);
 
 Route::resource('popups',AdminPopupController::class);
+Route::resource('about',AboutController::class);
 
 
 /**
@@ -83,7 +91,13 @@ Route::get('campus-profile',function(){
 
 // About us
 Route::get('about-us',function(){
-    return view('frontend.who_are_we.about');
+    $about = About::first();
+    return view('frontend.who_are_we.about',compact('about'));
+});
+
+Route::get('pedagogy-page',function(){
+    $pedagogy = Pedagogy::first();
+    return view('frontend.who_are_we.pedagogy',compact('pedagogy'));
 });
 
 // Department

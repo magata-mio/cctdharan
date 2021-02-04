@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container mt-4">
-        {!! $about->description !!}
+        {!! $pedagogy->description !!}
     </div>
 @endsection

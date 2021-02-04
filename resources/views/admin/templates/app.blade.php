@@ -193,41 +193,83 @@
             </a>
           </li>
       
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
+          {{-- Who are we? --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Mailbox
+                Who are we?
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="/cprofile/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                  <p>Campus Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="/about/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
+                  <p>About us</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                <a href="/pedagogy/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
+                  <p>Pedagogy</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="/sustainability/create" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sustainability</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/contact/create" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact us</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+           {{-- Facilities --}}
+          <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Facilities  
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Academics
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/programs/create" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Programs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/departments/create" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Department</p>
+                </a>
+              </li>
+             
             </ul>
           </li>
           <li class="nav-item has-treeview">

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\CampusProfile;
+use App\Models\About;
 use Illuminate\Http\Request;
 
-class CampusProfileController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,8 +25,8 @@ class CampusProfileController extends Controller
      */
     public function create()
     {
-        $cprofile = CampusProfile::first();
-        return view('admin.campus-profile.create',compact('cprofile'));
+        $about = About::first();
+        return view('admin.about.create',compact('about'));
     }
 
     /**
@@ -37,13 +37,9 @@ class CampusProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = $request->validate([
-            'description' => 'required'
-        ]);
-        
-        $campusprofile = new CampusProfile();
-        $campusprofile->description = $request->description;
-        $campusprofile->save();
+        $about = New About();
+        $about->description = $request->description;
+        $about->save();
         return redirect()->back();
     }
 
@@ -66,8 +62,8 @@ class CampusProfileController extends Controller
      */
     public function edit($id)
     {
-        $cprofile = CampusProfile::first();
-        return view('admin.campus-profile.edit',compact('cprofile'));
+        $about = About::find($id);
+        return view('admin.about.edit',compact('about'));
     }
 
     /**
@@ -79,13 +75,9 @@ class CampusProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = $request->validate([
-            'description' => 'required'
-        ]);
-        
-        $campusprofile = CampusProfile::find($id);
-        $campusprofile->description = $request->description;
-        $campusprofile->save();
+        $about =  About::find($id);
+        $about->description = $request->description;
+        $about->save();
         return redirect()->back();
     }
 

@@ -67,7 +67,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="/campus-profile">Profile of Campus</a></li>
                             <li><a class="dropdown-item" href="/about-us">About us</a></li>
-                            <li><a class="dropdown-item" href="#">Pedagogy</a></li>
+                            <li><a class="dropdown-item" href="/pedagogy-page">Pedagogy</a></li>
                             <li><a class="dropdown-item" href="#">Sustainability</a></li>
                             <li><a class="dropdown-item" href="#">Contact us</a></li>
                         </ul>
@@ -85,7 +85,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Programs</a></li>
                             <li><a class="dropdown-item" href="/departments">Departments</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Fact, Figures and Fee Chart</a></li>
                         </ul>
                     </li>
 
