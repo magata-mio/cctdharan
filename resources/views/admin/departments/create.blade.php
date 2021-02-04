@@ -1,10 +1,10 @@
 @extends('admin.templates.app')
 @section('content')
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header bg-primary">
-                    Add Faculty
+                    Add Department
                 </div>
                 <div class="card-body">
                     <form action="/departments" method="post">
@@ -13,13 +13,18 @@
                             <label for="name">Department Name</label>
                             <input id="name" class="form-control" type="text" name="name" placeholder="Department Name">
                         </div>
+
+                        <div class="form-group">
+                            <label for="my-textarea">Description</label>
+                            <textarea id="my-textarea" class="form-control ckeditor" name="description" rows="3"></textarea>
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header bg-secondary">
                     Department List
