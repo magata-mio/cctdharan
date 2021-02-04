@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminNoticeCategoryController;
+use App\Http\Controllers\Admin\AdminPopupController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\FacultyMemberController;
 use App\Http\Controllers\Admin\NonTeachingStaffController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\PageController;
 use App\Models\Notice;
 use App\Models\NoticeCategory;
+use App\Models\Popup;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +28,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $notices = Notice::all();
     $categories = NoticeCategory::all();
-    return view('frontend.index',compact('notices','categories'));
+    $popup = Popup::where('show',TRUE)->orderBy('created_at','DESC')->first();
+    return view('frontend.index',compact('notices','categories','popup'));
 });
 
 Auth::routes();
@@ -50,6 +53,8 @@ Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
 
 //Notice Category
 Route::resource('noticecategories',AdminNoticeCategoryController::class);
+
+Route::resource('popups',AdminPopupController::class);
 
 /**
  * Front End Route

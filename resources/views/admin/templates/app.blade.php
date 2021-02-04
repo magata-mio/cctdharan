@@ -252,6 +252,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('popups.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Popups</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/departments/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Department</p>
