@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminNoticeCategoryController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\FacultyMemberController;
 use App\Http\Controllers\Admin\NonTeachingStaffController;
 use App\Http\Controllers\Admin\NoticeCategoryController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +44,8 @@ Route::resource('fmembers',FacultyMemberController::class);
 // Nont Teaching Staff
 Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
 
+//Notice Category
+Route::resource('noticecategories',AdminNoticeCategoryController::class);
 
 /**
  * Front End Route

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Save;
 use App\Http\Controllers\Controller;
+use App\Models\Notice;
+use App\Models\NoticeCategory;
 use Illuminate\Http\Request;
 
 class NoticeController extends Controller
@@ -23,8 +26,10 @@ class NoticeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.notice.create');
+    {   $categories = NoticeCategory::all();
+        $notices = Notice::all();
+        $notices->load('category');
+        return view('admin.notice.create',compact('categories','notices'));
     }
 
     /**
@@ -35,7 +40,19 @@ class NoticeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'subject'=>'required',
+            'notice_category_id'=>'required|exists:notice_categories,id'
+        ]);
+        $notice = new Notice();
+        $notice->subject = $request->subject;
+        $notice->notice_category_id = $request->notice_category_id;
+        $notice->description= $request->description;
+        if($request->has('upload_file')){
+            $notice->file = Save::SaveFile($request->upload_file);
+        }
+        $notice->save();
+        return redirect()->back()->with('success','Notice Added');
     }
 
     /**
@@ -57,7 +74,11 @@ class NoticeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = NoticeCategory::all();
+        $notice= Notice::findOrFail($id);
+        $notices = Notice::all();
+        $notices->load('category');
+        return view('admin.notice.edit',compact('categories','notices','notice'));
     }
 
     /**
@@ -69,7 +90,19 @@ class NoticeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'subject'=>'required',
+            'notice_category_id'=>'required|exists:notice_categories,id'
+        ]);
+        $notice = Notice::findOrFail($id);
+        $notice->subject = $request->subject;
+        $notice->notice_category_id = $request->notice_category_id;
+        $notice->description= $request->description;
+        if($request->has('upload_file')){
+            $notice->file = Save::SaveFile($request->upload_file);
+        }
+        $notice->update();
+        return redirect()->back()->with('success','Notice Updated');
     }
 
     /**
@@ -80,6 +113,8 @@ class NoticeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $notice = Notice::findOrFail($id);
+        $notice->delete();
+        return redirect(route('notices.create'))->with('success','Notice Deleted');
     }
 }

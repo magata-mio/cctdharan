@@ -7,11 +7,12 @@
                     Add Notice Category
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('noticecategories.store') }}" method="post">
+                    <form action="{{ route('noticecategories.update',$noticecategory->id) }}" method="post">
                         @csrf
+                        @method('put')
                         <div class="form-group">
                             <label for="name">Notice Category</label>
-                            <input id="name" class="form-control" type="text" name="name" placeholder="Notice Category">
+                            <input id="name" class="form-control" value="{{ $noticecategory->name }}" type="text" name="name" placeholder="Notice Category">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
