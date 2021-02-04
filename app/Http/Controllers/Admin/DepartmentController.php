@@ -39,6 +39,7 @@ class DepartmentController extends Controller
     {
         $department = new Department();
         $department->name = $request->name;
+        $department->description = $request->description;
         $department->save();
         return redirect()->back();
     }

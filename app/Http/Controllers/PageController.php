@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\FacultyMember;
 use App\Models\Notice;
 use App\Models\NoticeCategory;
@@ -30,6 +31,7 @@ class PageController extends Controller
          return view('frontend.onlineform.create');
      }
 
+
      public function notice($id){
          $notice = Notice::findOrFail($id);
          return view('frontend.notice.show',compact('notice'));
@@ -39,4 +41,7 @@ class PageController extends Controller
          $category->load('notices');
          return view('frontend.notice-category.show',compact('category'));
      }
+
+    
+
 }

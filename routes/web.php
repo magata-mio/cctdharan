@@ -66,3 +66,7 @@ Route::get('notice/{id}',[PageController::class,'notice'])->name('frontend.notic
 Route::get('notice-category/{id}',[PageController::class,'noticeCategory'])->name('frontend.notice-category');
 
 
+// Department
+Route::get('departments',[PageController::class,'department']);
+Route::get('sdepartments/{id}',[PageController::class,'show']);
+
