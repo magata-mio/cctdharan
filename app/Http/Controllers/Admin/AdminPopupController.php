@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Save;
 use App\Http\Controllers\Controller;
-use App\Models\NoticeCategory;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
-class AdminNoticeCategoryController extends Controller
+class AdminPopupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,8 +26,8 @@ class AdminNoticeCategoryController extends Controller
      */
     public function create()
     {
-        $categories = NoticeCategory::all();
-        return view('admin.notice-category.create',compact('categories') );
+        $popups = Popup::all();
+        return view('admin.popups.create',compact('popups'));
     }
 
     /**
@@ -38,12 +39,18 @@ class AdminNoticeCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required'
+            'title'=>'required',
         ]);
-        $category = new NoticeCategory();
-        $category->name = $request->name;
-        $category->save();
-        return redirect()->back()->with('success','Category Added');
+        $popup = new Popup();
+        $popup->title = $request->title;
+        $popup->message = $request->message;
+        $popup->show = $request->show;
+        $popup->link = $request->link;
+        if($request->has('image')){
+            $popup->image = Save::SaveImage($request->image);
+        }
+        $popup->save();
+        return redirect()->back()->with('success','Popup Added');
     }
 
     /**
@@ -64,10 +71,10 @@ class AdminNoticeCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $noticecategory = NoticeCategory::findOrFail($id);
-        $categories = NoticeCategory::all();
-        return view('admin.notice-category.edit',compact('noticecategory','categories'));
+    {   
+        $popup = Popup::findOrFail($id);
+        $popups = Popup::all();
+        return view('admin.popups.edit',compact('popups','popup'));
     }
 
     /**
@@ -80,12 +87,18 @@ class AdminNoticeCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required'
+            'title'=>'required',
         ]);
-        $category = NoticeCategory::findOrfail($id);
-        $category->name = $request->name;
-        $category->update();
-        return redirect()->back()->with('success','Category Updated');
+        $popup = Popup::findOrFail($id);
+        $popup->title = $request->title;
+        $popup->message = $request->message;
+        $popup->show = $request->show;
+        $popup->link = $request->link;
+        if($request->has('image')){
+            $popup->image = Save::SaveImage($request->image);
+        }
+        $popup->update();
+        return redirect()->back()->with('success','Popup Updated');
     }
 
     /**
@@ -96,8 +109,8 @@ class AdminNoticeCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = NoticeCategory::findOrfail($id);
-        $category->delete();
-        return redirect(route('noticecategories.create'))->with('success','Category Deleted');
+        $popup = Popup::findOrFail($id);
+        $popup->delete();
+        return redirect(route('popups.create'))->with('success','Popup Deleted');
     }
 }

@@ -7,21 +7,27 @@
                     New Notice
                 </div>
                 <div class="card-body">
-                     <form action="{{ route('notices.store') }}" method="post" enctype="multipart/form-data">
-                        @csrf 
+                     <form action="{{ route('notices.update',$notice->id) }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('put')
+                        @if($notice->file)
+                        <a href="{{ $notice->file }}" class="btn btn-primary float-right" target="__blank">
+                            <i class="fas fa-download"></i>
+                        </a>
+                        @endif
                         <div class="form-group">
                              <label for="subject">Subject</label>
-                             <input id="subject" class="form-control" type="text" name="subject">
+                             <input id="subject" class="form-control" value="{{ $notice->subject }}" type="text" name="subject">
                          </div>
                          <div class="form-group">
                              <label for="description">Description</label>
-                             <textarea id="description" class="form-control" name="description" rows="3"></textarea>
+                             <textarea id="description" class="form-control" name="description" rows="3">{{ $notice->description }}</textarea>
                          </div>
                          <div class="form-group">
                              <label for="notice_category_id">Category</label>
                              <select id="notice_category_id" class="form-control" name="notice_category_id">
                                  @foreach ($categories as $category)
-                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                     <option value="{{ $category->id }}" @if($notice->notice_category_id==$category->id) selected @endif>{{ $category->name }}</option>
                                  @endforeach
                              </select>
                          </div>
