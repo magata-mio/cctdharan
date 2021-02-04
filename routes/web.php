@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\NonTeachingStaffController;
 use App\Http\Controllers\Admin\NoticeCategoryController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\PageController;
+use App\Models\CampusProfile;
+use App\Models\Department;
+use App\Models\FacultyMember;
 use App\Models\Notice;
 use App\Models\NoticeCategory;
 use App\Models\Popup;
@@ -69,11 +72,28 @@ Route::get('onlineform',[PageController::class,'onlineform']);
 Route::get('notice/{id}',[PageController::class,'notice'])->name('frontend.notice');
 Route::get('notice-category/{id}',[PageController::class,'noticeCategory'])->name('frontend.notice-category');
 
+/**
+ * Who are we Menu
+ */
+// Campus Profile
+Route::get('campus-profile',function(){
+    $profile = CampusProfile::first();
+        return view('frontend.who_are_we.campus-profile',compact('profile'));
+});
+
+// About us
+Route::get('about-us',function(){
+    return view('frontend.who_are_we.about');
+});
 
 // Department
-Route::get('departments',[PageController::class,'department']);
-Route::get('sdepartments/{id}',[PageController::class,'show']);
+Route::get('departments',function(){
+    $departments = Department::all();
+        return view('frontend.academic.departments',compact('departments'));
+});
 
-// Campus Profile
-Route::get('cprofile',[PageController::class,'cprofile']);
-
+Route::get('sdepartments/{id}',function($id){
+    $members = FacultyMember::where('department_id',$id)->get();
+    $department = Department::findOrFail($id);
+    return view('frontend.academic.department-profile',compact('department','members'));
+});
