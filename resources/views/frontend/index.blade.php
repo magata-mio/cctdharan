@@ -76,9 +76,9 @@
             <h4>Notice Board</h4>
             <div class="col-md-4">
                 <ul class="list-unstyled">
-                    <li class="text-primary"><i class="fas fa-check"></i><a href="" class="text-decoration-none"> Notice (General)</a></li>
-                    <li class="text-primary"><i class="fas fa-check"></i><a href="" class="text-decoration-none"> Notice (Departmental)</a></li>
-                    <li class="text-primary"><i class="fas fa-check"></i><a href="" class="text-decoration-none"> Notice (Result Publication)</a></li>
+                    @foreach ($categories as $category)
+                    <li class="text-primary"><i class="fas fa-check"></i> <a href="{{ route('frontend.notice-category',$category->id) }}" class="text-decoration-none">{{ $category->name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -98,3 +98,42 @@
       </div>
 @endsection
 
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script type="text/javascript">
+  $(window).on('load', function() {
+      $('#myModal').modal('show');
+  });
+</script>
+
+@endsection
+
+@section('modal')
+    {{-- Modal Display --}}
+    @if ($popup)
+        <div class="modal" tabindex="-1" id='myModal'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ $popup->title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @if ($popup->image)
+                <img src="{{ $popup->image }}" alt="..." class="img-fluid">
+                @endif
+                <p>{!! $popup->message !!}</p>
+            </div>
+            @if ($popup->link)
+            <div class="modal-footer">
+                <a href="{!! $popup->link !!}" class="btn btn-primary">
+                    Apply Now    
+                </a>
+              </div>
+            </div>
+            @endif
+        </div>
+        </div>
+    @endif
+{{-- End Modal Display --}}
+@endsection
