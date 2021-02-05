@@ -38,7 +38,7 @@
                     <div class="col-4">
                         <br><br>
                         <hr>
-                        Full Signature Of The Applicant
+                        Applicant Signature
                     </div>
                     <div class="col-4">
     
