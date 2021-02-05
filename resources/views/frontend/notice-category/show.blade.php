@@ -3,26 +3,19 @@
 @section('content')
     <div class="container">
         <h3>{{ $category->name }}</h3>
-        <div class="row">
-            @foreach ($category->notices as $notice)
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-header">
-                            {{ $notice->subject }}
-                        </div>
-                        <div class="card body pb-1">
-                            <p>
-                                {{ $notice->description }}
-                            </p>
-                            <a href="{{ route('frontend.notice',$notice->id) }}"  class="btn btn-sm mb-2 btn-primary">
-                                <span>
-                                    <i class="fas fa-eye"></i> View
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+        @foreach ($category->notices as $notice)
+           <div>
+                <div class="lead">{{ $notice->subject }}</div>
+                <a href="{{ $notice->file }}"  target="__blank">
+                    <i class="fas fa-download"></i> Download File
+                </a>
+                 @if ($notice->description)
+                     <p>{{ $notice->description }}</p>
+                 @endif
+                 <br>
+                <p class="text-small fs-6 text-secondary">{{ $notice->created_at->diffForHumans() }}</p>
+           </div>  
+           <hr>   
+        @endforeach
     </div>
 @endsection

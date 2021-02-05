@@ -74,7 +74,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Facilities</a>
+                        <a class="nav-link" href="/facilities-page">Facilities</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -157,15 +157,23 @@
 
                 <div class="col-md-1">
                     <address>
-                        <a href="" class="text-white">Home</a> <br>
-                        <a href="" class="text-white">Who are we</a> <br>
-                        <a href="" class="text-white">Academics</a> <br>
-                        <a href="" class="text-white">Components</a><br>
+                        <a href="/" class="text-white">Home</a> <br>
+                        <a href="/about-us" class="text-white">Who are we</a> <br>
+                        <a href="/departments" class="text-white">Academics</a> <br>
+                        <a href="#" class="text-white">Components</a><br>
                     </address>
                 </div>
             </div>
+
+            <strong>Copyright &copy; 2017-{{ now()->year }} <a href="#" class="text-info text-decoration-none">CCT Dharan</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+              <b>Developed by</b> Code IT
+            </div>
         </div>
+       
     </footer>
+
 
 
     <!-- Optional JavaScript; choose one of the two! -->

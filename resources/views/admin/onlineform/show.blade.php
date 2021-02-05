@@ -303,7 +303,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <a href="{{ $form->bankslip }}" target="__blank" class="btn btn-primary">
-                                    Deposit Slip of Nepal Bank Limited Dharan
+                                    Deposit Slip
                                     <i class="fas fa-download"></i>
                                 </a>
                             </div>

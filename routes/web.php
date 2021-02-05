@@ -53,30 +53,32 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 // Notice
-Route::resource('notices',NoticeController::class);
+Route::resource('notices',NoticeController::class)->middleware('admin');
 
 // Faculty Backend
-Route::resource('departments',DepartmentController::class);
+Route::resource('departments',DepartmentController::class)->middleware('admin');
 
 // Faculty member Backend
-Route::resource('fmembers',FacultyMemberController::class);
+Route::resource('fmembers',FacultyMemberController::class)->middleware('admin');
 
 // Nont Teaching Staff
-Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
+Route::resource('nonteachingstaffs',NonTeachingStaffController::class)->middleware('admin');
 
 // Campus profile
-Route::resource('cprofile',CampusProfileController::class);
+Route::resource('cprofile',CampusProfileController::class)->middleware('admin');
 
-Route::resource('pedagogy',PedagogyController::class);
-Route::resource('sustainability',SustainabilityController::class);
+Route::resource('pedagogy',PedagogyController::class)->middleware('admin');
+Route::resource('sustainability',SustainabilityController::class)->middleware('admin');
 
 
 //Notice Category
-Route::resource('noticecategories',AdminNoticeCategoryController::class);
+Route::resource('noticecategories',AdminNoticeCategoryController::class)->middleware('admin');
 
-Route::resource('popups',AdminPopupController::class);
-Route::resource('about',AboutController::class);
-Route::resource('facilities',FacilityController::class);
+Route::resource('popups',AdminPopupController::class)->middleware('admin');
+Route::resource('about',AboutController::class)->middleware('admin');
+Route::resource('facilities',FacilityController::class)->middleware('admin');
+
+Route::resource('form',AdminFormController::class)->middleware('admin');
 
 /**
  * Front End Route
@@ -139,5 +141,3 @@ Route::get('admitcard/{id}',function($id){
     $form = OnlineForm::findOrFail($id);
     return view('frontend.admitcard.show',compact('form'));   
 })->name('admitcard');
-
-Route::resource('form',AdminFormController::class);

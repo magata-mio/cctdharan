@@ -1,17 +1,5 @@
 @extends('frontend.templates.app')
-    @if (session('success'))
-    <div class="alert alert-primary m-2">
-        {{ session('success') }}
-    </div>
-    @endif
-    @if (session('fail'))
-    <div class="alert alert-warning m-2">
-        {{ session('fail') }}
-    </div>
-    @endif
-    @foreach ($errors->all() as $error)
-        <div>{{ $error }}</div>
-    @endforeach
+    
 @section('content')
 <div class="container my-5">
     <h1 class="fs-4">Online Form</h1>
@@ -24,15 +12,18 @@
                    <div class="col-md-4">
                        <div class="form-group">
                            <label for="firstName">First Name</label>
-                           <input id="firstName" class="form-control" type="text" name="firstName" required>
+                           <input id="firstName" class="form-control" type="text" name="firstName" required value="{{ old('firstName') }}">
                        </div>
+                       @error('firstName')
+                           <div class="text-danger">{{ $message }}</div>
+                       @enderror
                    </div>
    
                    {{-- Middle Name --}}
                    <div class="col-md-4">
                        <div class="form-group">
                            <label for="middleName">Middle Name</label>
-                           <input id="middleName" class="form-control" type="text" name="middleName">
+                           <input id="middleName" class="form-control" type="text" name="middleName" value="{{ old('middleName') }}">
                        </div>
                    </div>
    
@@ -40,8 +31,11 @@
                    <div class="col-md-4">
                        <div class="form-group">
                            <label for="lastName">Last Name</label>
-                           <input id="lastName" class="form-control" type="text" name="lastName" required>
+                           <input id="lastName" class="form-control" type="text" name="lastName" required value="{{ old('lastName') }}">
                        </div>
+                       @error('lastName')
+                       <div class="text-danger">{{ $message }}</div>
+                   @enderror
                    </div>
                </div>
    
@@ -66,40 +60,55 @@
                   <div class="col-md-2">
                       <div class="form-group">
                           <label for="district">District</label>
-                          <input id="district" class="form-control" type="text" name="district" required>
+                          <input id="district" class="form-control" type="text" name="district" required value="{{ old('district') }}">
                       </div>
+                      @error('district')
+                      <div class="text-danger">{{ $message }}</div>
+                  @enderror
                   </div>
    
                   {{-- Last Name --}}
                   <div class="col-md-2 ">
                       <div class="form-group">
                           <label for="municipality">VDC/Municipality</label>
-                          <input id="municipality" class="form-control" type="text" name="municipality" required>
+                          <input id="municipality" class="form-control" type="text" name="municipality" required value="{{ old('municipality') }}">
                       </div>
+                      @error('municipality')
+                      <div class="text-danger">{{ $message }}</div>
+                     @enderror
                   </div>
    
                    {{-- Ward --}}
                <div class="col-md-2">
                    <div class="form-group">
                        <label for="ward">Ward</label>
-                       <input id="ward" class="form-control" type="text" name="ward" required>
+                       <input id="ward" class="form-control" type="text" name="ward" required value="{{ old('ward') }}">
                    </div>
+                   @error('ward')
+                      <div class="text-danger">{{ $message }}</div>
+                    @enderror
                </div>
    
               {{-- Middle Name --}}
               <div class="col-md-2">
                   <div class="form-group">
                       <label for="block">Block No</label>
-                      <input id="block" class="form-control" type="text" name="block" required>
+                      <input id="block" class="form-control" type="text" name="block" required value="{{ old('block') }}">
                   </div>
+                  @error('block')
+                  <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
    
               {{-- Last Name --}}
               <div class="col-md-2">
                   <div class="form-group">
                       <label for="tole">Tole</label>
-                      <input id="tole" class="form-control" type="text" name="tole" required>
+                      <input id="tole" class="form-control" type="text" name="tole" required value="{{ old('tole') }}">
                   </div>
+                  @error('tole')
+                  <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
               </div>
             </div>
@@ -161,7 +170,7 @@
 
                 <tbody>
                     <tr>
-                        <td><input type="text" name="a" class="form-control" required></td>
+                        <td><input type="text" name="a" class="form-control" required value="{{ old('a') }}"></td>
                         <td>
                             <select name="b" class="form-control">
                                 <option value="2070">2070</option>
@@ -175,7 +184,7 @@
                                 <option value="others">Others</option>
                             </select>
                         </td>
-                        <td><input type="text" name="c" class="form-control" required></td>
+                        <td><input type="text" name="c" class="form-control" required value="{{ old('c') }}"></td>
                         <td>
                             <select name="d" class="form-control">
                                 <option value="A+">A+</option>
@@ -187,10 +196,10 @@
                                 
                             </select>
                         </td>
-                        <td><input type="text" name="e" class="form-control" required></td>
-                        <td><input type="text" name="f" class="form-control" required></td>
-                        <td><input type="text" name="g" class="form-control" required></td>
-                        <td><input type="text" name="h" class="form-control" required></td>
+                        <td><input type="text" name="e" class="form-control" required value="{{ old('e') }}"></td>
+                        <td><input type="text" name="f" class="form-control" required value="{{ old('f') }}"></td>
+                        <td><input type="text" name="g" class="form-control" required value="{{ old('g') }}"></td>
+                        <td><input type="text" name="h" class="form-control" required value="{{ old('h') }}"></td>
                     </tr>
                 </tbody>
             </table>
@@ -215,7 +224,7 @@
 
                 <tbody>
                     <tr>
-                        <td><input type="text" name="i" class="form-control" required></td>
+                        <td><input type="text" name="i" class="form-control" required value="{{ old('i') }}"></td>
                         <td>
                             <select name="j" class="form-control">
                                 <option value="2070">2070</option>
@@ -229,7 +238,7 @@
                                 <option value="others">Others</option>
                             </select>
                         </td>
-                        <td><input type="text" name="k" class="form-control" required></td>
+                        <td><input type="text" name="k" class="form-control" required value="{{ old('k') }}"></td>
                         <td>
                             <select name="l" class="form-control">
                                 <option value="A+">A+</option>
@@ -241,10 +250,10 @@
                                 
                             </select>
                         </td>
-                        <td><input type="text" name="m" class="form-control" required></td>
-                        <td><input type="text" name="n" class="form-control" required></td>
-                        <td><input type="text" name="o" class="form-control" required></td>
-                        <td><input type="text" name="p" class="form-control" required></td>
+                        <td><input type="text" name="m" class="form-control" required value="{{ old('m') }}"></td>
+                        <td><input type="text" name="n" class="form-control" required value="{{ old('n') }}"></td>
+                        <td><input type="text" name="o" class="form-control" required value="{{ old('o') }}"></td>
+                        <td><input type="text" name="p" class="form-control" required value="{{ old('p') }}"></td>
                     </tr>
                 </tbody>
             </table>
@@ -254,14 +263,14 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="slcmarksheet">SLC Marksheet</label>
-                        <input id="slcmarksheet" class="form-control-file" type="file" name="slcmarksheet">
+                        <input id="slcmarksheet" class="form-control-file" type="file" name="slcmarksheet" required>
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="slccharacter">SLC Character Certificate</label>
-                        <input id="slccharacter" class="form-control-file" type="file" name="slccharacter">
+                        <input id="slccharacter" class="form-control-file" type="file" name="slccharacter" required>
                     </div>
                 </div>
 
@@ -284,21 +293,21 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="citizenship">Citizenship</label>
-                        <input id="citizenship" class="form-control-file" type="file" name="citizenship">
+                        <input id="citizenship" class="form-control-file" type="file" name="citizenship" required>
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="ppphoto">Passport Size Photo</label>
-                        <input id="ppphoto" class="form-control-file" type="file" name="ppphoto">
+                        <input id="ppphoto" class="form-control-file" type="file" name="ppphoto" required>
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="bankslip">Deposit Slip of Nepal Bank Limited Dharan</label>
-                        <input id="bankslip" class="form-control-file" type="file" name="bankslip">
+                        <input id="bankslip" class="form-control-file" type="file" name="bankslip" required>
                     </div>
                 </div>
 
