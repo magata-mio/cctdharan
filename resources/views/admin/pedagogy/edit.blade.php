@@ -7,8 +7,8 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" class="form-control ckeditor" name="description" rows="10">{{ $pedagogy->description }}</textarea>
+                        <label for="editor">Page Content</label>
+                        <textarea id="editor" class="form-control ckeditor" name="editor" rows="10">{{ $pedagogy->description }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                     <a href="/pedagogy/{{ $pedagogy->id }}/edit" class="btn btn-success">Edit</a>

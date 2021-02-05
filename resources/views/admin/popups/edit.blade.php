@@ -44,8 +44,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Description</label>
-                            <textarea name="message" class="ckeditor form-control" rows="5" placeholder="Event Description"
+                            <label for="editor">Description</label>
+                            <textarea name="editor" class="form-control" rows="5" id="editor" placeholder="Event Description"
                                 required> {{ $popup->message }} </textarea>
                             @error('message')
                                 <span class="invalid-feedback" role="alert">

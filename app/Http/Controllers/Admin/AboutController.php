@@ -38,7 +38,7 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         $about = New About();
-        $about->description = $request->description;
+        $about->description = $request->editor;
         $about->save();
         return redirect()->back();
     }
@@ -76,7 +76,7 @@ class AboutController extends Controller
     public function update(Request $request, $id)
     {
         $about =  About::find($id);
-        $about->description = $request->description;
+        $about->description = $request->editor;
         $about->save();
         return redirect()->back();
     }

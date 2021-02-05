@@ -43,7 +43,7 @@ class AdminPopupController extends Controller
         ]);
         $popup = new Popup();
         $popup->title = $request->title;
-        $popup->message = $request->message;
+        $popup->message = $request->editor;
         $popup->show = $request->show;
         $popup->link = $request->link;
         if($request->has('image')){
@@ -91,7 +91,7 @@ class AdminPopupController extends Controller
         ]);
         $popup = Popup::findOrFail($id);
         $popup->title = $request->title;
-        $popup->message = $request->message;
+        $popup->message = $request->editor;
         $popup->show = $request->show;
         $popup->link = $request->link;
         if($request->has('image')){

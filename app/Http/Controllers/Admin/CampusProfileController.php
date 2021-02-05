@@ -84,7 +84,7 @@ class CampusProfileController extends Controller
         ]);
         
         $campusprofile = CampusProfile::find($id);
-        $campusprofile->description = $request->description;
+        $campusprofile->description = $request->editor;
         $campusprofile->save();
         return redirect()->back();
     }

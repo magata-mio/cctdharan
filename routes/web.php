@@ -5,20 +5,23 @@ use App\Http\Controllers\Admin\AdminNoticeCategoryController;
 use App\Http\Controllers\Admin\AdminPopupController;
 use App\Http\Controllers\Admin\CampusProfileController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\Admin\FacultyMemberController;
 use App\Http\Controllers\Admin\NonTeachingStaffController;
-use App\Http\Controllers\Admin\NoticeCategoryController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\PedagogyController;
+use App\Http\Controllers\Admin\SustainabilityController;
 use App\Http\Controllers\PageController;
 use App\Models\About;
 use App\Models\CampusProfile;
 use App\Models\Department;
+use App\Models\Facility;
 use App\Models\FacultyMember;
 use App\Models\Notice;
 use App\Models\NoticeCategory;
 use App\Models\Pedagogy;
 use App\Models\Popup;
+use App\Models\Sustainability;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -62,6 +65,7 @@ Route::resource('nonteachingstaffs',NonTeachingStaffController::class);
 Route::resource('cprofile',CampusProfileController::class);
 
 Route::resource('pedagogy',PedagogyController::class);
+Route::resource('sustainability',SustainabilityController::class);
 
 
 //Notice Category
@@ -69,7 +73,7 @@ Route::resource('noticecategories',AdminNoticeCategoryController::class);
 
 Route::resource('popups',AdminPopupController::class);
 Route::resource('about',AboutController::class);
-
+Route::resource('facilities',FacilityController::class);
 
 /**
  * Front End Route
@@ -99,6 +103,21 @@ Route::get('pedagogy-page',function(){
     $pedagogy = Pedagogy::first();
     return view('frontend.who_are_we.pedagogy',compact('pedagogy'));
 });
+
+Route::get('sustainability-page',function(){
+    $sustainability = Sustainability::first();
+    return view('frontend.who_are_we.sustainability',compact('sustainability'));
+});
+
+
+Route::get('facilities-page',function(){
+    $facility = Facility::first();
+    return view('frontend.facilities.facilities-page',compact('facility'));
+});
+
+
+
+
 
 // Department
 Route::get('departments',function(){

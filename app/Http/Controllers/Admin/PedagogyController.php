@@ -38,7 +38,7 @@ class PedagogyController extends Controller
     public function store(Request $request)
     {
         $pedagogy = New Pedagogy();
-        $pedagogy->description = $request->description;
+        $pedagogy->description = $request->editor;
         $pedagogy->save();
         return redirect()->back();
     }
@@ -76,7 +76,7 @@ class PedagogyController extends Controller
     public function update(Request $request, $id)
     {
         $pedagogy = Pedagogy::find($id);
-        $pedagogy->description = $request->description;
+        $pedagogy->description = $request->editor;
         $pedagogy->save();
         return redirect()->back();
     }

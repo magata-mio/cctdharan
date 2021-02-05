@@ -15,8 +15,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="my-textarea">Description</label>
-                            <textarea id="my-textarea" class="form-control ckeditor" name="description" rows="3"></textarea>
+                            <label for="editor">Description</label>
+                            <textarea id="editor" class="form-control" name="editor" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         

@@ -1,6 +1,6 @@
 @extends('frontend.templates.app')
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         {!! $profile->description !!}
     </div>
 

@@ -14,8 +14,8 @@
                              <input id="subject" class="form-control" type="text" name="subject">
                          </div>
                          <div class="form-group">
-                             <label for="description">Description</label>
-                             <textarea id="description" class="form-control" name="description" rows="3"></textarea>
+                             <label for="editor">Description</label>
+                             <textarea id="editor" class="form-control" name="editor" rows="3"></textarea>
                          </div>
                          <div class="form-group">
                              <label for="notice_category_id">Category</label>
