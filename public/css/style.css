@@ -6,15 +6,6 @@ p{
     color: #495057;
 }
 
-.carousel-inner > .carousel-item {
-    height: 90vh;
-    
- }
-
- .carousel-inner > .carousel-item > img {
-    height: 100vh;
-    
- }
 
  .carousel-item{
     transition: transform 2s ease, opacity .5s ease-out
