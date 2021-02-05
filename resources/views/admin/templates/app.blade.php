@@ -341,7 +341,7 @@
           
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href="{{ route('form.index') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Student Form Collection</p>
             </a>
@@ -436,13 +436,11 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
 
-    {{-- <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script> --}}
-    {{-- <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
             $('#datatable').DataTable();
-            $('.ckeditor').ckeditor();
         });
-    </script> --}}
+    </script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
     <script>

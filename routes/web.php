@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\AdminFormController;
 use App\Http\Controllers\Admin\AdminNoticeCategoryController;
 use App\Http\Controllers\Admin\AdminPopupController;
 use App\Http\Controllers\Admin\CampusProfileController;
@@ -138,3 +139,5 @@ Route::get('admitcard/{id}',function($id){
     $form = OnlineForm::findOrFail($id);
     return view('frontend.admitcard.show',compact('form'));   
 })->name('admitcard');
+
+Route::resource('form',AdminFormController::class);

@@ -24,6 +24,7 @@ class CreateOnlineFormsTable extends Migration
             $table->string('ward');
             $table->string('block');
             $table->string('tole');
+            $table->string('guardian')->nullable();
             $table->string('relation')->nullable();
             $table->string('occupation')->nullable();
             $table->string('mobile')->nullable();
