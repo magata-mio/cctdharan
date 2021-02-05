@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\PedagogyController;
 use App\Http\Controllers\Admin\SustainabilityController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostFormController;
 use App\Models\About;
 use App\Models\CampusProfile;
 use App\Models\Department;
@@ -19,6 +20,7 @@ use App\Models\Facility;
 use App\Models\FacultyMember;
 use App\Models\Notice;
 use App\Models\NoticeCategory;
+use App\Models\OnlineForm;
 use App\Models\Pedagogy;
 use App\Models\Popup;
 use App\Models\Sustainability;
@@ -81,6 +83,7 @@ Route::resource('facilities',FacilityController::class);
  */
 Route::get('faculties-member',[PageController::class,'getFacultiesMember']);
 Route::get('onlineform',[PageController::class,'onlineform']);
+Route::post('onlineform',PostFormController::class)->name('form');
 Route::get('notice/{id}',[PageController::class,'notice'])->name('frontend.notice');
 Route::get('notice-category/{id}',[PageController::class,'noticeCategory'])->name('frontend.notice-category');
 
@@ -130,3 +133,8 @@ Route::get('sdepartments/{id}',function($id){
     $department = Department::findOrFail($id);
     return view('frontend.academic.department-profile',compact('department','members'));
 });
+
+Route::get('admitcard/{id}',function($id){
+    $form = OnlineForm::findOrFail($id);
+    return view('frontend.admitcard.show',compact('form'));   
+})->name('admitcard');
