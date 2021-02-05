@@ -25,7 +25,8 @@ class CampusProfileController extends Controller
      */
     public function create()
     {
-        return view('admin.campus-profile.create');
+        $cprofile = CampusProfile::first();
+        return view('admin.campus-profile.create',compact('cprofile'));
     }
 
     /**
@@ -65,7 +66,8 @@ class CampusProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cprofile = CampusProfile::first();
+        return view('admin.campus-profile.edit',compact('cprofile'));
     }
 
     /**
@@ -77,7 +79,14 @@ class CampusProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $request->validate([
+            'description' => 'required'
+        ]);
+        
+        $campusprofile = CampusProfile::find($id);
+        $campusprofile->description = $request->editor;
+        $campusprofile->save();
+        return redirect()->back();
     }
 
     /**

@@ -24,7 +24,7 @@
     <title>CCT Dharan</title>
 </head>
 
-<body>
+<body d-flex flex-column h-100>
     @isset($notices)
         {{-- Notice Section --}}
         <div class="container-fluid">
@@ -65,9 +65,9 @@
                             Who we are?
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Profile of Campus</a></li>
-                            <li><a class="dropdown-item" href="#">About us</a></li>
-                            <li><a class="dropdown-item" href="#">Pedagogy</a></li>
+                            <li><a class="dropdown-item" href="/campus-profile">Profile of Campus</a></li>
+                            <li><a class="dropdown-item" href="/about-us">About us</a></li>
+                            <li><a class="dropdown-item" href="/pedagogy-page">Pedagogy</a></li>
                             <li><a class="dropdown-item" href="#">Sustainability</a></li>
                             <li><a class="dropdown-item" href="#">Contact us</a></li>
                         </ul>
@@ -84,8 +84,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Programs</a></li>
-                            <li><a class="dropdown-item" href="#">Departments</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="/departments">Departments</a></li>
+                            <li><a class="dropdown-item" href="#">Fact, Figures and Fee Chart</a></li>
                         </ul>
                     </li>
 
@@ -132,13 +132,18 @@
         </div>
     </nav>
 
+
+    <main class="flex-shrink-0">
+
     @yield('modal')
 
     @yield('carousel')
 
     @yield('content')
+    </main>
 
-    <footer class="mt-5 p-4 text-white" style="background-color: #0000cc">
+
+    <footer class="mt-4 p-4 text-white" style="background-color: #0000cc">
         <div class="container">
             <div class="row">
                 <div class="col-md-11">

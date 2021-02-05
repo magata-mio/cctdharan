@@ -1,28 +1,28 @@
  {{-- Carousel --}}
  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{{ asset('img/s3.jpg') }}" class="d-block w-100" alt="...">
+    <div class="carousel-inner" style="max-height: 90vh">
+      <div class="carousel-item active" style="max-height: 90vh">
+        <img src="{{ asset('img/s3.jpg') }}" class="w-100" alt="..." style="max-height: 90vh">
       </div>
-      <div class="carousel-item">
-        <img src="{{ asset('img/s6.jpg') }}" class="d-block w-100" alt="...">
+      <div class="carousel-item" style="max-height: 90vh">
+        <img src="{{ asset('img/s6.jpg') }}" class="w-100" alt="..." style="max-height: 90vh">
       </div>
       
       
-      <div class="carousel-item">
-        <img src="{{ asset('img/s2.jpg') }}" class="d-block w-100" alt="...">
+      <div class="carousel-item" style="max-height: 90vh">
+        <img src="{{ asset('img/s2.jpg') }}" class="w-100" alt="..." style="max-height: 90vh">
       </div>
-      <div class="carousel-item">
-        <img src="{{ asset('img/s1.jpg') }}" class="d-block w-100" alt="...">
+      <div class="carousel-item" style="max-height: 90vh">
+        <img src="{{ asset('img/s1.jpg') }}" class="w-100" alt="..." style="max-height: 90vh">
       </div>
       
       
 
       <div class="carousel-item">
-        <img src="{{ asset('img/s4.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ asset('img/s4.jpg') }}" class="w-100" alt="..." style="max-height: 90vh">
       </div>
       <div class="carousel-item">
-        <img src="{{ asset('img/s5.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ asset('img/s5.jpg') }}" class="w-100" alt="..." style="max-height: 90vh">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">

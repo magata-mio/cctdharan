@@ -72,14 +72,19 @@
 
         <div class="container py-5">
              {{-- Notice Section --}}
+             <h4>Notice Board</h4>
         <div class="row">
-            <h4>Notice Board</h4>
             <div class="col-md-4">
                 <ul class="list-unstyled">
                     @foreach ($categories as $category)
                     <li class="text-primary"><i class="fas fa-check"></i> <a href="{{ route('frontend.notice-category',$category->id) }}" class="text-decoration-none">{{ $category->name }}</a></li>
                     @endforeach
                 </ul>
+            </div>
+            
+            <div class="col-md-8">
+                <h5>Online Registration Form</h5>
+                <a href="" class="text-decoration-none">Click Here</a>
             </div>
         </div>
         </div>
@@ -88,12 +93,12 @@
 
 
         <div class="container">
-        <div class="row">
-            <h1 class="fs-4">Our Location</h1>
-            <div class="col-md-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7121.2257240558265!2d87.28194387517382!3d26.820452929776426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcd454e4bda1ff6d5!2sCentral%20Campus%20of%20Technology!5e0!3m2!1sen!2snp!4v1612408111398!5m2!1sen!2snp"  height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100"></iframe>
-            </div>
-        </div>  
+            <div class="row">
+                <h1 class="fs-4">Our Location</h1>
+                <div class="col-md-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7121.2257240558265!2d87.28194387517382!3d26.820452929776426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcd454e4bda1ff6d5!2sCentral%20Campus%20of%20Technology!5e0!3m2!1sen!2snp!4v1612408111398!5m2!1sen!2snp"  height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100"></iframe>
+                </div>
+            </div>  
         </div>
       </div>
 @endsection
@@ -126,7 +131,7 @@
             </div>
             @if ($popup->link)
             <div class="modal-footer">
-                <a href="{!! $popup->link !!}" class="btn btn-primary">
+                <a href="{!! $popup->link !!}" class="btn btn-danger" >
                     Apply Now    
                 </a>
               </div>

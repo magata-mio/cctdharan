@@ -41,24 +41,11 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/home" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+      
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -184,50 +171,92 @@
                with font-awesome or any other icon font library -->
          
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/home" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dashboard
-                <span class="right badge badge-danger">New</span>
+              
               </p>
             </a>
           </li>
       
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
+          {{-- Who are we? --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="fas fa-address-card"></i>
               <p>
-                Mailbox
+                Who are we?
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                <a href="/cprofile/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Campus Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
+                <a href="/about/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>About us</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
+                <a href="/pedagogy/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Pedagogy</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="/sustainability/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Sustainability</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/contact/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Contact us</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+           {{-- Facilities --}}
+          <li class="nav-item">
+            <a href="/facilities/create" class="nav-link">
+              <i class="fas fa-users-cog"></i>
+              <p>
+                Facilities  
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-graduation-cap"></i>
+              <p>
+                Academics
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/programs/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Programs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/departments/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Department</p>
+                </a>
+              </li>
+             
             </ul>
           </li>
           <li class="nav-item has-treeview">
@@ -241,55 +270,55 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="/notices/create" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add Notice</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('noticecategories.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add Notice Category</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('popups.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add Popups</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/departments/create" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add Department</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/fmembers/create" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add Faculty Members</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/projects.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add Non Teaching Staff</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/project-add.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add TU Employees Association</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/project-edit.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add TU Teachers Association</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/project-detail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-check-square"></i>
                   <p>Add Other Associations</p>
                 </a>
               </li>
@@ -321,21 +350,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+    
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -408,12 +423,18 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
 
-    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-    <script type="text/javascript">
+    {{-- <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script> --}}
+    {{-- <script type="text/javascript">
         $(document).ready(function () {
             $('#datatable').DataTable();
             $('.ckeditor').ckeditor();
         });
+    </script> --}}
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
+    <script>
+      var editor = CKEDITOR.replace( 'editor' );
+      CKFinder.setupCKEditor( editor );
     </script>
 </body>
 </html>

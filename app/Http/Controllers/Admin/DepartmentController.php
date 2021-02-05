@@ -39,7 +39,7 @@ class DepartmentController extends Controller
     {
         $department = new Department();
         $department->name = $request->name;
-        $department->description = $request->description;
+        $department->description = $request->editor;
         $department->save();
         return redirect()->back();
     }
@@ -63,7 +63,9 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $department = Department::findOrFail($id);
+        $departments = Department::all();
+        return view('admin.departments.edit',compact('department','departments'));
     }
 
     /**
@@ -75,7 +77,11 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $department = Department::findOrFail($id);
+        $department->name = $request->name;
+        $department->description = $request->editor;
+        $department->save();
+        return redirect()->back();
     }
 
     /**

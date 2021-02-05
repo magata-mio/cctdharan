@@ -15,10 +15,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="my-textarea">Description</label>
-                            <textarea id="my-textarea" class="form-control ckeditor" name="description" rows="3"></textarea>
+                            <label for="editor">Description</label>
+                            <textarea id="editor" class="form-control" name="editor" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        
+
                     </form>
                 </div>
             </div>
@@ -45,8 +47,7 @@
                                     <td>{{ $department->id }}</td>
                                     <td>{{ $department->name }}</td>
                                     <td>
-                                        <a href=""><i class="fas fa-edit"></i></a>
-                                        <a href="" class="text-success"><i class="fas fa-eye"></i></a>
+                                        <a href="/departments/{{ $department->id }}/edit"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

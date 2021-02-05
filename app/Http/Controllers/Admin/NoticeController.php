@@ -47,7 +47,7 @@ class NoticeController extends Controller
         $notice = new Notice();
         $notice->subject = $request->subject;
         $notice->notice_category_id = $request->notice_category_id;
-        $notice->description= $request->description;
+        $notice->description= $request->editor;
         if($request->has('upload_file')){
             $notice->file = Save::SaveFile($request->upload_file);
         }
@@ -97,7 +97,7 @@ class NoticeController extends Controller
         $notice = Notice::findOrFail($id);
         $notice->subject = $request->subject;
         $notice->notice_category_id = $request->notice_category_id;
-        $notice->description= $request->description;
+        $notice->description= $request->editor;
         if($request->has('upload_file')){
             $notice->file = Save::SaveFile($request->upload_file);
         }

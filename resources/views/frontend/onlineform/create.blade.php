@@ -1,10 +1,22 @@
 @extends('frontend.templates.app')
-
+    @if (session('success'))
+    <div class="alert alert-primary m-2">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if (session('fail'))
+    <div class="alert alert-warning m-2">
+        {{ session('fail') }}
+    </div>
+    @endif
+    @foreach ($errors->all() as $error)
+        <div>{{ $error }}</div>
+    @endforeach
 @section('content')
-    <div class="container my-5">
-        <h1 class="fs-4">Online Form</h1>
-        <form action="" method="post" enctype="multipart/form-data">
-            @csrf
+<div class="container my-5">
+    <h1 class="fs-4">Online Form</h1>
+    <form action="{{ route('form') }}" method="post" enctype="multipart/form-data">
+        @csrf
             <div class="lead mt-4 text-danger">Personal Details</div>
             <div class="py-4 px-4" style="background-color: #f1f1f1">
                 <div class="row">
@@ -37,8 +49,8 @@
                    {{-- Pardesh --}}
                   <div class="col-md-2">
                       <div class="form-group">
-                          <label for="pardesh">Pardesh</label>
-                          <select name="pardesh" class="form-control">
+                          <label for="pradesh">Pardesh</label>
+                          <select name="pradesh" class="form-control">
                               <option value="1">Pardesh 1</option>
                               <option value="2">Pardesh 2</option>
                               <option value="3">Pardesh 3</option>
