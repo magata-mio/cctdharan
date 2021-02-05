@@ -21,7 +21,8 @@
                 <div class="row">
                     <div class="col-9">
                         <div>
-                            <span class="fw-bold"> Entrance Exam Roll No.: </span>  {{ $form->id }}
+
+                            <span class="fw-bold"> Entrance Exam Roll No.: </span>  {{ $form->id+8000 }}
                         </div>
                         <div>
                            <span class="fw-bold">Name:</span>  {{ $form->firstName }} {{ $form->middleName }} {{ $form->lastName }}
