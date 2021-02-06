@@ -1,5 +1,6 @@
 @extends('admin.templates.app')
 @section('content')
+   <div class="container py-2">
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -100,7 +101,7 @@
                                     <td>{!!  $fmember->phd != null ? '<i class="fas fa-check"></i>' : ''  !!}</td>
                                     <td>{{ $fmember->department->name }}</td>
                                     <td><img src="{{ asset($fmember->image) }}" alt="" width="64"></td>
-                                    <td><a href=""><i class="fas fa-edit"></i></a></td>
+                                    <td><a href="/fmembers/{{ $fmember->id }}/edit"><i class="fas fa-edit"></i></a></td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -109,4 +110,5 @@
             </div>
         </div>
     </div>
+   </div>
 @endsection

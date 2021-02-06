@@ -15,7 +15,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $abouts = About::all();
+        return view('admin.about.index',compact('abouts'));
     }
 
     /**
@@ -25,8 +26,8 @@ class AboutController extends Controller
      */
     public function create()
     {
-        $about = About::first();
-        return view('admin.about.create',compact('about'));
+       
+        return view('admin.about.create');
     }
 
     /**
@@ -37,7 +38,12 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = $request->validate([
+            'title' =>'required',
+            'editor' =>'required',
+        ]);
         $about = New About();
+        $about->title = $request->title;
         $about->description = $request->editor;
         $about->save();
         return redirect()->back();
@@ -75,9 +81,15 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = $request->validate([
+            'title' =>'required',
+            'editor' =>'required',
+        ]);
+
         $about =  About::find($id);
+        $about->title = $request->title;
         $about->description = $request->editor;
-        $about->save();
+        $about->update();
         return redirect()->back();
     }
 

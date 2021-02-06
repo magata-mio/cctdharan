@@ -41,11 +41,13 @@ class PostFormController extends Controller
             'n'=>'required',
             'o'=>'required',
             'p'=>'required',
-            'slcmarksheet'=>'required',
-            'slccharacter'=>'required',
-            'citizenship'=>'required',
-            'ppphoto'=>'required',
-            'bankslip'=>'required',
+            'slcmarksheet'=> 'required|file|max:512',
+            'slccharacter'=>'required|file|max:512',
+             'ptransctipt' => 'file|max:512',
+             'pcharacter' => 'file|max:512',
+            'citizenship'=>'required|file|max:512',
+            'ppphoto'=>'required|file|max:512',
+            'bankslip'=>'required|file|max:512',
         ]);
         $onlineform = new OnlineForm();
         $onlineform->fill($request->except(['id',

@@ -15,7 +15,8 @@ class PedagogyController extends Controller
      */
     public function index()
     {
-        //
+        $pages = Pedagogy::all();
+        return view('admin.pedagogy.index',compact('pages'));
     }
 
     /**
@@ -25,8 +26,8 @@ class PedagogyController extends Controller
      */
     public function create()
     {
-        $pedagogy = Pedagogy::first();
-        return view('admin.pedagogy.create',compact('pedagogy'));
+       
+        return view('admin.pedagogy.create');
     }
 
     /**
@@ -37,7 +38,12 @@ class PedagogyController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = $request->validate([
+            'title' => 'required',
+            'editor' => 'required',
+        ]);
         $pedagogy = New Pedagogy();
+        $pedagogy->title = $request->title;
         $pedagogy->description = $request->editor;
         $pedagogy->save();
         return redirect()->back();
@@ -75,9 +81,15 @@ class PedagogyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = $request->validate([
+            'title' => 'required',
+            'editor' => 'required',
+        ]);
+
         $pedagogy = Pedagogy::find($id);
+        $pedagogy->title = $request->title;
         $pedagogy->description = $request->editor;
-        $pedagogy->save();
+        $pedagogy->update();
         return redirect()->back();
     }
 

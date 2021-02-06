@@ -15,7 +15,8 @@ class SustainabilityController extends Controller
      */
     public function index()
     {
-        //
+        $pages = Sustainability::all();
+        return view('admin.sustainability.index',compact('pages'));
     }
 
     /**
@@ -25,8 +26,8 @@ class SustainabilityController extends Controller
      */
     public function create()
     {
-        $data = Sustainability::first();
-        return view('admin.sustainability.create',compact('data'));
+       
+        return view('admin.sustainability.create');
     }
 
     /**
@@ -38,10 +39,12 @@ class SustainabilityController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'title' => 'required',
             'editor' => 'required'
         ]);
 
         $sustainability = new Sustainability();
+        $sustainability->title = $request->title;
         $sustainability->description = $request->editor;
         $sustainability->save();
         return redirect()->back();
@@ -80,12 +83,14 @@ class SustainabilityController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
+            'title' => 'required',
             'editor' => 'required'
         ]);
 
         $sustainability =  Sustainability::find($id);
+        $sustainability->title = $request->title;
         $sustainability->description = $request->editor;
-        $sustainability->save();
+        $sustainability->update();
         return redirect()->back();
     }
 

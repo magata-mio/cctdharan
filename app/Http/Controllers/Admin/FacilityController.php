@@ -15,7 +15,8 @@ class FacilityController extends Controller
      */
     public function index()
     {
-       
+       $pages = Facility::all();
+       return view('admin.facilities.index',compact('pages'));
     }
 
     /**
@@ -25,8 +26,8 @@ class FacilityController extends Controller
      */
     public function create()
     {
-        $facility = Facility::first();
-        return view('admin.facilities.create',compact('facility'));
+       
+        return view('admin.facilities.create');
        
     }
 
@@ -39,10 +40,12 @@ class FacilityController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'title' => 'required',
             'editor' => 'required'
         ]);
 
         $facility = New Facility();
+        $facility->title = $request->title;
         $facility->description = $request->editor;
         $facility->save();
         return redirect()->back();
@@ -81,10 +84,12 @@ class FacilityController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
+            'title' => 'required',
             'editor' => 'required'
         ]);
 
         $facility = Facility::find($id);
+        $facility->title = $request->title;
         $facility->description = $request->editor;
         $facility->update();
         return redirect()->back();

@@ -15,7 +15,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        
+        $pages = Department::all();
+        return view('admin.departments.index',compact('pages'));
     }
 
     /**
@@ -37,6 +38,10 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = $request->validate([
+            'name' => 'required',
+            'editor' => 'required',
+        ]);
         $department = new Department();
         $department->name = $request->name;
         $department->description = $request->editor;
@@ -64,8 +69,7 @@ class DepartmentController extends Controller
     public function edit($id)
     {
         $department = Department::findOrFail($id);
-        $departments = Department::all();
-        return view('admin.departments.edit',compact('department','departments'));
+        return view('admin.departments.edit',compact('department'));
     }
 
     /**
@@ -77,6 +81,10 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = $request->validate([
+            'name' => 'required',
+            'editor' => 'required',
+        ]);
         $department = Department::findOrFail($id);
         $department->name = $request->name;
         $department->description = $request->editor;

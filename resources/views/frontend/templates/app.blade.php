@@ -83,9 +83,9 @@
                             Academics
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Programs</a></li>
-                            <li><a class="dropdown-item" href="/departments">Departments</a></li>
-                            <li><a class="dropdown-item" href="#">Fact, Figures and Fee Chart</a></li>
+                            <li><a class="dropdown-item" href="/program-page">Programs</a></li>
+                            <li><a class="dropdown-item" href="/sdepartments">Departments</a></li>
+                            <li><a class="dropdown-item" href="/facts-page">Fact, Figures and Fee Chart</a></li>
                         </ul>
                     </li>
 
@@ -95,9 +95,9 @@
                             Components
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Governing Bodies</a></li>
+                            <li><a class="dropdown-item" href="/gbody-page">Governing Bodies</a></li>
                             <li><a class="dropdown-item" href="#">IQAC</a></li>
-                            <li><a class="dropdown-item" href="#">Faculty Members</a></li>
+                            <li><a class="dropdown-item" href="/faculties-member">Faculty Members</a></li>
                             <li><a class="dropdown-item" href="#">Non Teaching Staff</a></li>
                             <li><a class="dropdown-item" href="#">Student welfare</a></li>
                             <li><a class="dropdown-item" href="#">Associations</a></li>
@@ -112,19 +112,18 @@
                             Research & Publication
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Research</a></li>
+                            <li><a class="dropdown-item" href="/research-page">Research</a></li>
                             <li><a class="dropdown-item" href="#">Publication</a></li>
-                            <li><a class="dropdown-item" href="/faculties-member">Faculty Members</a></li>
-                            <li><a class="dropdown-item" href="#">Non Teaching Staff</a></li>
-                            <li><a class="dropdown-item" href="#">Student welfare</a></li>
-                            <li><a class="dropdown-item" href="#">Associations</a></li>
-                            <li><a class="dropdown-item" href="#">Free Student Union</a></li>
-                            <li><a class="dropdown-item" href="#">Other Associations</a></li>
+                            
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FAQS</a>
+                        <a class="nav-link" href="/faqs-page">FAQS</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/onlineform">Apply Online</a>
                     </li>
 
                 </ul>
@@ -150,7 +149,7 @@
                     <address>
                         Contact us <br>
                         <strong>Email</strong>: info@cctdharan.edu.np <br>
-                        <strong>Phone</strong>: 977-25525163 <br>
+                        <strong>Phone</strong>: 025-520228 <br>
                         Dharan-14, Hattisar
                     </address>
                 </div>
@@ -159,16 +158,16 @@
                     <address>
                         <a href="/" class="text-white">Home</a> <br>
                         <a href="/about-us" class="text-white">Who are we</a> <br>
-                        <a href="/departments" class="text-white">Academics</a> <br>
+                        <a href="/sdepartment" class="text-white">Academics</a> <br>
                         <a href="#" class="text-white">Components</a><br>
                     </address>
                 </div>
             </div>
 
             <strong>Copyright &copy; 2017-{{ now()->year }} <a href="#" class="text-info text-decoration-none">CCT Dharan</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-              <b>Developed by</b> Code IT
+
+            <div class="float-right d-sm-inline-block">
+              <b>Developed by</b> <a href="https://codeitapps.com" class="text-white text-decoration-none">Code IT</a>
             </div>
         </div>
        

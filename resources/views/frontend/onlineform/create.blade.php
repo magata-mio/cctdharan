@@ -3,6 +3,7 @@
 @section('content')
 <div class="container my-5">
     <h1 class="fs-4">Online Form</h1>
+    <p>Admission open for Bachlore Degree in Nutrition and Dietetics</p>
     <form action="{{ route('form') }}" method="post" enctype="multipart/form-data">
         @csrf
             <div class="lead mt-4 text-danger">Personal Details</div>
@@ -11,7 +12,7 @@
                     {{-- First Name --}}
                    <div class="col-md-4">
                        <div class="form-group">
-                           <label for="firstName">First Name</label>
+                           <label for="firstName">First Name <span class="text-danger">*</span></label>
                            <input id="firstName" class="form-control" type="text" name="firstName" required value="{{ old('firstName') }}">
                        </div>
                        @error('firstName')
@@ -30,7 +31,7 @@
                    {{-- Last Name --}}
                    <div class="col-md-4">
                        <div class="form-group">
-                           <label for="lastName">Last Name</label>
+                           <label for="lastName">Last Name <span class="text-danger">*</span></label>
                            <input id="lastName" class="form-control" type="text" name="lastName" required value="{{ old('lastName') }}">
                        </div>
                        @error('lastName')
@@ -43,7 +44,7 @@
                    {{-- Pardesh --}}
                   <div class="col-md-2">
                       <div class="form-group">
-                          <label for="pradesh">Pardesh</label>
+                          <label for="pradesh">Pardesh <span class="text-danger">*</span></label>
                           <select name="pradesh" class="form-control">
                               <option value="1">Pardesh 1</option>
                               <option value="2">Pardesh 2</option>
@@ -59,7 +60,7 @@
                   {{-- Middle Name --}}
                   <div class="col-md-2">
                       <div class="form-group">
-                          <label for="district">District</label>
+                          <label for="district">District <span class="text-danger">*</span></label>
                           <input id="district" class="form-control" type="text" name="district" required value="{{ old('district') }}">
                       </div>
                       @error('district')
@@ -70,7 +71,7 @@
                   {{-- Last Name --}}
                   <div class="col-md-2 ">
                       <div class="form-group">
-                          <label for="municipality">VDC/Municipality</label>
+                          <label for="municipality">VDC/Municipality <span class="text-danger">*</span></label>
                           <input id="municipality" class="form-control" type="text" name="municipality" required value="{{ old('municipality') }}">
                       </div>
                       @error('municipality')
@@ -81,7 +82,7 @@
                    {{-- Ward --}}
                <div class="col-md-2">
                    <div class="form-group">
-                       <label for="ward">Ward</label>
+                       <label for="ward">Ward <span class="text-danger">*</span></label>
                        <input id="ward" class="form-control" type="text" name="ward" required value="{{ old('ward') }}">
                    </div>
                    @error('ward')
@@ -92,7 +93,7 @@
               {{-- Middle Name --}}
               <div class="col-md-2">
                   <div class="form-group">
-                      <label for="block">Block No</label>
+                      <label for="block">Block No <span class="text-danger">*</span></label>
                       <input id="block" class="form-control" type="text" name="block" required value="{{ old('block') }}">
                   </div>
                   @error('block')
@@ -103,7 +104,7 @@
               {{-- Last Name --}}
               <div class="col-md-2">
                   <div class="form-group">
-                      <label for="tole">Tole</label>
+                      <label for="tole">Tole <span class="text-danger">*</span></label>
                       <input id="tole" class="form-control" type="text" name="tole" required value="{{ old('tole') }}">
                   </div>
                   @error('tole')
@@ -121,28 +122,28 @@
                 <div class="col-md-2">
                     <div class="form-group">
                         <label for="guardian">Guardian Name</label>
-                        <input id="guardian" class="form-control" type="text" name="guardian">
+                        <input id="guardian" class="form-control" type="text" name="guardian" value="{{ old("guardian") }}">
                     </div>
                 </div>
 
                 <div class="col-md-2">
                     <div class="form-group">
                         <label for="relation">Relation</label>
-                        <input id="relation" class="form-control" type="text" name="relation">
+                        <input id="relation" class="form-control" type="text" name="relation" value="{{ old('relation') }}">
                     </div>
                 </div>
 
                 <div class="col-md-2">
                     <div class="form-group">
                         <label for="occupation">Occupation</label>
-                        <input id="occupation" class="form-control" type="text" name="occupation">
+                        <input id="occupation" class="form-control" type="text" name="occupation" value="{{ old('occupation') }}">
                     </div>
                 </div>  
 
                 <div class="col-md-2">
                     <div class="form-group">
                         <label for="mobile">Mobile</label>
-                        <input id="mobile" class="form-control" type="text" name="mobile">
+                        <input id="mobile" class="form-control" type="text" name="mobile" value="{{ old('mobile') }}">
                     </div>
                 </div>  
             </div>
@@ -152,19 +153,22 @@
             <div class="px-4 py-4 mt-4" style="background-color: #f1f1f1">
                 {{-- SEE --}}
             <div class="lead mt-4 text-primary">Examinitation Passed:</div>
-            <p class="fw-bold text-danger">SLC / SEE</p>
+            <p class="fw-bold text-danger">SLC / SEE </p>
+             
+            <div class="table-responsive">
 
+         
             <table class="table table-bordered table-sm table-striped">
                 <thead>
                     <tr>
-                        <th>Board</th>
-                        <th>Passed Year</th>
-                        <th>Full marks/credit</th>
-                        <th>Marks obtain/grade</th>
-                        <th>Percentage/GPA</th>
-                        <th>Division/GPA</th>
-                        <th>Roll No</th>
-                        <th>School</th>
+                        <th>Board <span class="text-danger">*</span></th>
+                        <th>Passed Year <span class="text-danger">*</span></th>
+                        <th>Full marks/credit <span class="text-danger">*</span></th>
+                        <th>Marks obtain/grade <span class="text-danger">*</span></th>
+                        <th>Percentage/GPA <span class="text-danger">*</span></th>
+                        <th>Division/GPA <span class="text-danger">*</span></th>
+                        <th>Roll No <span class="text-danger">*</span></th>
+                        <th>School <span class="text-danger">*</span></th>
                     </tr>
                 </thead>
 
@@ -211,14 +215,14 @@
             <table class="table table-bordered table-sm table-striped">
                 <thead>
                     <tr>
-                        <th>Board</th>
-                        <th>Passed Year</th>
-                        <th>Full marks/credit</th>
-                        <th>Marks obtain/grade</th>
-                        <th>Percentage/GPA</th>
-                        <th>Division/GPA</th>
-                        <th>Roll No</th>
-                        <th>College</th>
+                        <th>Board <span class="text-danger">*</span></th>
+                        <th>Passed Year <span class="text-danger">*</span></th>
+                        <th>Full marks/credit <span class="text-danger">*</span></th>
+                        <th>Marks obtain/grade <span class="text-danger">*</span></th>
+                        <th>Percentage/GPA <span class="text-danger">*</span></th>
+                        <th>Division/GPA <span class="text-danger">*</span></th>
+                        <th>Roll No <span class="text-danger">*</span></th>
+                        <th>College <span class="text-danger">*</span></th>
                     </tr>
                 </thead>
 
@@ -257,57 +261,81 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
 
             {{-- Documents --}}
+            <p><span class="fw-bold">Note:</span> File size must be maximum 512 KB</p>
+            <p>Reduce your file size from this link: <a href="https://tinypng.com/" target="_blank">Reduce File Size</a></p>
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="slcmarksheet">SLC Marksheet</label>
-                        <input id="slcmarksheet" class="form-control-file" type="file" name="slcmarksheet" required>
+                        <label for="slcmarksheet">SLC Marksheet <span class="text-danger">*</span></label>
+                        <input id="slcmarksheet" class="form-control-file" type="file" name="slcmarksheet" required value="{{ old('slcmarksheet') }}">
                     </div>
+                    @error('slcmarksheet')
+                    <div class="text-danger">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="slccharacter">SLC Character Certificate</label>
-                        <input id="slccharacter" class="form-control-file" type="file" name="slccharacter" required>
+                        <label for="slccharacter">SLC Character Certificate <span class="text-danger">*</span></label>
+                        <input id="slccharacter" class="form-control-file" type="file" name="slccharacter" required value="{{ old('slccharacter') }}">
                     </div>
+                    @error('slccharacter')
+                    <div class="text-danger">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="ptranscript">+2 Transcript or marksheet</label>
-                        <input id="ptranscript" class="form-control-file" type="file" name="ptranscript">
+                        <input id="ptranscript" class="form-control-file" type="file" name="ptranscript" value="{{ old('ptranscript') }}">
                     </div>
+                    @error('pranscript')
+                    <div class="text-danger">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="pcharacter">+2 Character Certificate</label>
-                        <input id="pcharacter" class="form-control-file" type="file" name="pcharacter">
+                        <label for="pcharacter">+2 Character Certificate </label>
+                        <input id="pcharacter" class="form-control-file" type="file" name="pcharacter" value="{{ old('pcharacter') }}">
                     </div>
+                    @error('pcharacter')
+                    <div class="text-danger">{{ $message }}</div>
+                  @enderror
                 </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="citizenship">Citizenship</label>
-                        <input id="citizenship" class="form-control-file" type="file" name="citizenship" required>
+                        <label for="citizenship">Citizenship <span class="text-danger">*</span></label>
+                        <input id="citizenship" class="form-control-file" type="file" name="citizenship" required value="{{ old('citizenshop') }}">
                     </div>
+                    @error('citizenship')
+                    <div class="text-danger">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="ppphoto">Passport Size Photo</label>
-                        <input id="ppphoto" class="form-control-file" type="file" name="ppphoto" required>
+                        <label for="ppphoto">Passport Size Photo <span class="text-danger">*</span></label>
+                        <input id="ppphoto" class="form-control-file" type="file" name="ppphoto" required value="{{ old('ppphoto') }}">
                     </div>
+                    @error('ppphoto')
+                    <div class="text-danger">{{ $message }}</div>
+                  @enderror
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="bankslip">Deposit Slip of Nepal Bank Limited Dharan</label>
-                        <input id="bankslip" class="form-control-file" type="file" name="bankslip" required>
+                        <label for="bankslip">Deposit Slip of Nepal Bank Limited Dharan <span class="text-danger">*</span></label>
+                        <input id="bankslip" class="form-control-file" type="file" name="bankslip" required value="{{ old('bankslip') }}">
+                        @error('bankslip')
+                        <div class="text-danger">{{ $message }}</div>
+                      @enderror
                     </div>
                 </div>
 

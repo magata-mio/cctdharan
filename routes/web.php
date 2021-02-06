@@ -7,10 +7,15 @@ use App\Http\Controllers\Admin\AdminPopupController;
 use App\Http\Controllers\Admin\CampusProfileController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\FacilityController;
+use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\FacultyMemberController;
+use App\Http\Controllers\Admin\FAQSController;
+use App\Http\Controllers\Admin\GoverningBodyController;
 use App\Http\Controllers\Admin\NonTeachingStaffController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\PedagogyController;
+use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\SustainabilityController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostFormController;
@@ -18,12 +23,17 @@ use App\Models\About;
 use App\Models\CampusProfile;
 use App\Models\Department;
 use App\Models\Facility;
+use App\Models\Fact;
 use App\Models\FacultyMember;
+use App\Models\FAQ;
+use App\Models\GoverningBody;
 use App\Models\Notice;
 use App\Models\NoticeCategory;
 use App\Models\OnlineForm;
 use App\Models\Pedagogy;
 use App\Models\Popup;
+use App\Models\Program;
+use App\Models\Research;
 use App\Models\Sustainability;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -79,7 +89,11 @@ Route::resource('about',AboutController::class)->middleware('admin');
 Route::resource('facilities',FacilityController::class)->middleware('admin');
 
 Route::resource('form',AdminFormController::class)->middleware('admin');
-
+Route::resource('programs',ProgramController::class)->middleware('admin');
+Route::resource('governingbodies',GoverningBodyController::class)->middleware('admin');
+Route::resource('faqs',FAQSController::class)->middleware('admin');
+Route::resource('research',ResearchController::class)->middleware('admin');
+Route::resource('facts',FactController::class)->middleware('admin');
 /**
  * Front End Route
  * Only Front End Route are allowed here
@@ -122,11 +136,44 @@ Route::get('facilities-page',function(){
 });
 
 
+Route::get('program-page',function(){
+    $program = Program::first();
+    return view('frontend.academic.program-page',compact('program'));
+});
+
+Route::get('gbody-page',function(){
+    $gbody = GoverningBody::first();
+    return view('frontend.component.gbody',compact('gbody'));
+});
+
+Route::get('faqs-page',function(){
+    $faq = FAQ::first();
+    return view('frontend.component.faqs-page',compact('faq'));
+});
+
+Route::get('research-page',function(){
+    $research = Research::first();
+    return view('frontend.research-and-publication.research',compact('research'));
+});
+
+Route::get('facts-page',function(){
+    $fact = Fact::first();
+    return view('frontend.academic.facts',compact('fact'));
+});
+
+
+
+
+
+
+
+
+
 
 
 
 // Department
-Route::get('departments',function(){
+Route::get('sdepartments',function(){
     $departments = Department::all();
         return view('frontend.academic.departments',compact('departments'));
 });

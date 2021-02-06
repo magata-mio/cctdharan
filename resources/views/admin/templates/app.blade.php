@@ -172,10 +172,9 @@
          
           <li class="nav-item">
             <a href="/home" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-              
               </p>
             </a>
           </li>
@@ -191,50 +190,46 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/cprofile/create" class="nav-link">
+                <a href="/cprofile" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>Campus Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/about/create" class="nav-link">
+                <a href="/about" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>About us</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/pedagogy/create" class="nav-link">
+                <a href="/pedagogy/" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>Pedagogy</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="/sustainability/create" class="nav-link">
+                <a href="/sustainability" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>Sustainability</p>
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href="/contact/create" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>Contact us</p>
-                </a>
-              </li>
+            
             </ul>
           </li>
 
            {{-- Facilities --}}
           <li class="nav-item">
-            <a href="/facilities/create" class="nav-link">
+            <a href="/facilities" class="nav-link">
               <i class="fas fa-users-cog"></i>
               <p>
                 Facilities  
               </p>
             </a>
           </li>
-
+          
+          {{-- Academic --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fas fa-graduation-cap"></i>
@@ -245,83 +240,122 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/programs/create" class="nav-link">
+                <a href="/programs" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>Programs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/departments/create" class="nav-link">
+                <a href="/departments" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>Department</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/facts" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Facts, Figures & Fee Chart</p>
                 </a>
               </li>
              
             </ul>
           </li>
+
+          {{-- Component --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+              <i class="fas fa-info-circle"></i>
               <p>
-                Pages
+                Component
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/notices/create" class="nav-link">
+                <a href="/governingbodies" class="nav-link">
                   <i class="far fa-check-square"></i>
-                  <p>Add Notice</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('noticecategories.create') }}" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>Add Notice Category</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('popups.create') }}" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>Add Popups</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/departments/create" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>Add Department</p>
+                  <p>Governing body</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/fmembers/create" class="nav-link">
                   <i class="far fa-check-square"></i>
-                  <p>Add Faculty Members</p>
+                  <p>Faculty Members</p>
                 </a>
               </li>
+
+
               <li class="nav-item">
-                <a href="pages/examples/projects.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-check-square"></i>
-                  <p>Add Non Teaching Staff</p>
+                  <p>Teaching Staff</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-check-square"></i>
-                  <p>Add TU Employees Association</p>
+                  <p>TU Employees Association</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>Add TU Teachers Association</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-detail.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-check-square"></i>
                   <p>Add Other Associations</p>
                 </a>
               </li>
+            
+             
+            </ul>
+          </li>
+
+           {{-- FAQS --}}
+           <li class="nav-item">
+            <a href="/faqs" class="nav-link">
+              <i class="fas fa-question-circle"></i>
+              <p>
+                FAQS  
+              </p>
+            </a>
+          </li>
+
+        
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-bullhorn"></i>
+              <p>
+                Post
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('noticecategories.create') }}" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Notice Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/notices/create" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Notice</p>
+                </a>
+              </li>
+             
+              <li class="nav-item">
+                <a href="{{ route('popups.create') }}" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Popups Notification</p>
+                </a>
+              </li>
+             
+              
           
             </ul>
           </li>
@@ -329,16 +363,29 @@
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
             <a href="{{ route('form.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
+              <i class="fas fa-paste"></i>
               <p>Student Form Collection</p>
             </a>
           </li>
        
           <li class="nav-item">
-            <a class="text-white" href="{{ route('logout') }}"
+            <a class="nav-link" href="{{ route('register') }}">
+              <i class="fas fa-users"></i>
+              {{ __('Register New User') }}
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/password/reset">
+              <i class="fas fa-unlock"></i>
+              Reset Password
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{{ route('logout') }}" 
             onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
-            <i class="nav-icon far fa-circle text-info"></i>
+            <i class="fas fa-sign-out-alt"></i>
                 {{ __('Logout') }}
             </a>
 

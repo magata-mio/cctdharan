@@ -39,6 +39,14 @@ class FacultyMemberController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = $request->validate([
+            'designation' => 'required',
+            'gender' => 'required',
+            'name' => 'required',
+            'status' => 'required',
+
+        ]);
+
         $member = new FacultyMember();
         $member->designation = $request->designation;
         $member->gender = $request->gender;
@@ -76,8 +84,10 @@ class FacultyMemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {    $departments = Department::all();
+        $fmembers = FacultyMember::all();
+        $fmember = FacultyMember::find($id);
+        return view('admin.faculty-menber.edit',compact('fmember','fmembers','departments'));
     }
 
     /**
@@ -89,7 +99,30 @@ class FacultyMemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $request->validate([
+            'designation' => 'required',
+            'gender' => 'required',
+            'name' => 'required',
+            'status' => 'required',
+
+        ]);
+        $member = FacultyMember::find($id);
+        $member->designation = $request->designation;
+        $member->gender = $request->gender;
+        $member->name = $request->name;
+        $member->department_id = $request->department_id;
+        $member->phd = $request->phd;
+        $member->status = $request->status;
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $imageName = time() . $file->getClientOriginalName();
+            $file->move('faculty-member',$imageName);
+            $member->image = 'faculty-member/' . $imageName;
+        }
+
+        $member->update();
+        return redirect()->back();
     }
 
     /**

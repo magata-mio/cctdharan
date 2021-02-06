@@ -15,7 +15,8 @@ class CampusProfileController extends Controller
      */
     public function index()
     {
-        //
+        $profiles = CampusProfile::all();
+        return view('admin.campus-profile.index',compact('profiles'));
     }
 
     /**
@@ -25,8 +26,7 @@ class CampusProfileController extends Controller
      */
     public function create()
     {
-        $cprofile = CampusProfile::first();
-        return view('admin.campus-profile.create',compact('cprofile'));
+        return view('admin.campus-profile.create');
     }
 
     /**
@@ -38,10 +38,12 @@ class CampusProfileController extends Controller
     public function store(Request $request)
     {
         $validator = $request->validate([
-            'description' => 'required'
+            'title' => 'required',
+            'editor' => 'required'
         ]);
         
         $campusprofile = new CampusProfile();
+        $campusprofile->title = $request->title;
         $campusprofile->description = $request->description;
         $campusprofile->save();
         return redirect()->back();
@@ -66,8 +68,8 @@ class CampusProfileController extends Controller
      */
     public function edit($id)
     {
-        $cprofile = CampusProfile::first();
-        return view('admin.campus-profile.edit',compact('cprofile'));
+        $profile = CampusProfile::find($id);
+        return view('admin.campus-profile.edit',compact('profile'));
     }
 
     /**
@@ -80,12 +82,14 @@ class CampusProfileController extends Controller
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
-            'description' => 'required'
+            'title' => 'required',
+            'editor' => 'required'
         ]);
         
         $campusprofile = CampusProfile::find($id);
+        $campusprofile->title = $request->title;
         $campusprofile->description = $request->editor;
-        $campusprofile->save();
+        $campusprofile->update();
         return redirect()->back();
     }
 
