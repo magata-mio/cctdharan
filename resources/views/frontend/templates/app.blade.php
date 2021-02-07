@@ -73,8 +73,29 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/facilities-page">Facilities</a>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Facilities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Library</a></li>
+                            <li><a class="dropdown-item" href="#">Extra-curricular activities: </a></li>
+                            <li><a class="dropdown-item" href="#">Hostel</a></li>
+                            <li><a class="dropdown-item" href="#">Transportation</a></li>
+                            <li><a class="dropdown-item" href="#">Quarters</a></li>
+                            <li><a class="dropdown-item" href="#">Computers/Internet/Multimedia</a></li>
+                            <li><a class="dropdown-item" href="#">Museum</a></li>
+                            <li><a class="dropdown-item" href="#">Laboratories</a></li>
+                            <li><a class="dropdown-item" href="#">Seminar Hall</a></li>
+                            <li><a class="dropdown-item" href="#">Cafeteria</a></li>
+                            <li><a class="dropdown-item" href="#">Saraswoti Temple</a></li>
+                            <li><a class="dropdown-item" href="#">Botanical Garden (Under construction)</a></li>
+                            <li><a class="dropdown-item" href="#">Water Fountain</a></li>
+                            <li><a class="dropdown-item" href="#">Other Facilities:</a></li>
+                            <li><a class="dropdown-item" href="#">Botanical Garden (Under construction)</a></li>
+                        </ul>
                     </li>
 
                     <li class="nav-item dropdown">
