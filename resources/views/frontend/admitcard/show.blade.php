@@ -10,10 +10,12 @@
                         <img src="{{ asset('img/logo.png') }}" alt="Tribhuvan University" class="img-fluid">
                     </div>
                     <div class="col-8 text-center">
-                        <b>Tribhuvan University</b>
-                        <b>Institute of Science & Technology, Dharan</b>
-                        <b>4 Years Bachelor's Degree in Nutrition & Dietetics</b>
-                        <b>Entrance Examination 2077</b>
+                        <b>Central Campus Of Technology</b> <br>
+                        <b>Institute of Science & Technology</b> <br>
+                        <b>Tribhuvan University</b> <br>
+                        <b>Dharan-4, Sunsari</b> <br>
+                        <b>B.Sc. Nutrition And Dietetics</b> <br>
+                        <b>Entrance Examination 2077</b> <br>
                         <h5>ADMIT CARD</h5>
                     </div>
                     <div class="col-2"></div>

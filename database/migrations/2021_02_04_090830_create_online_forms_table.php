@@ -22,7 +22,9 @@ class CreateOnlineFormsTable extends Migration
             $table->string('district');
             $table->string('municipality');
             $table->string('ward');
-            $table->string('block');
+            $table->string('block')->nullable();
+            $table->string('student_mobile');
+            $table->date('dob');
             $table->string('tole');
             $table->string('guardian')->nullable();
             $table->string('relation')->nullable();
@@ -46,9 +48,9 @@ class CreateOnlineFormsTable extends Migration
             $table->string('p');
             $table->string('slcmarksheet');
             $table->string('slccharacter');
-            $table->string('ptranscript')->nullable();
+            $table->string('ptranscript');
             $table->string('pcharacter')->nullable();
-            $table->string('citizenship');
+            $table->string('citizenship')->nullable();
             $table->string('ppphoto');
             $table->string('bankslip');
             $table->timestamps();
