@@ -167,15 +167,7 @@
                                 </td>
                                 <td><input type="text" name="c" value="{{ $form->c }}" class="form-control" required></td>
                                 <td>
-                                    <select name="d" class="form-control">
-                                        <option value="A+" @if($form->d == 'A+') selected @endif>A+</option>
-                                        <option value="A" @if($form->d == 'A') selected @endif>A</option>
-                                        <option value="B+" @if($form->d == 'B+') selected @endif>B+</option>
-                                        <option value="B" @if($form->d == 'B') selected @endif>B</option>
-                                        <option value="C+" @if($form->d == 'C+') selected @endif>C+</option>
-                                        <option value="C" @if($form->d == 'C') selected @endif>C</option>
-    
-                                    </select>
+                                    <input type="text" name="d" id="" required class="form-control" required value="{{ $form->d }}">
                                 </td>
                                 <td><input type="text" name="e" value="{{ $form->e }}" class="form-control" required></td>
                                 <td><input type="text" name="f" value="{{ $form->f }}" class="form-control" required></td>
@@ -221,15 +213,8 @@
                                 </td>
                                 <td><input type="text" name="k" value="{{ $form->k }}" class="form-control" required></td>
                                 <td>
-                                    <select name="l" class="form-control">
-                                        <option value="A+" @if($form->l == 'A+') selected @endif>A+</option>
-                                        <option value="A" @if($form->l == 'A') selected @endif>A</option>
-                                        <option value="B+" @if($form->l == 'B+') selected @endif>B+</option>
-                                        <option value="B" @if($form->l == 'B') selected @endif>B</option>
-                                        <option value="C+" @if($form->l == 'C+') selected @endif>C+</option>
-                                        <option value="C" @if($form->l == 'C') selected @endif>C</option>
-    
-                                    </select>
+                                    <input type="text" name="l" id="" required class="form-control" required value="{{ $form->l }}">
+                                  
                                 </td>
                                 <td><input type="text" value="{{ $form->m }}" name="m" class="form-control" required></td>
                                 <td><input type="text" name="n" value="{{ $form->n }}" class="form-control" required></td>
