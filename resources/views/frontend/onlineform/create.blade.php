@@ -235,15 +235,7 @@
                                 <td><input type="text" name="c" class="form-control" required value="{{ old('c') }}">
                                 </td>
                                 <td>
-                                    <select name="d" class="form-control">
-                                        <option value="A+">A+</option>
-                                        <option value="A">A</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-
-                                    </select>
+                                    <input type="text" name="d" class="form-control">
                                 </td>
                                 <td><input type="text" name="e" class="form-control" required value="{{ old('e') }}">
                                 </td>
@@ -295,16 +287,8 @@
                                 <td><input type="text" name="k" class="form-control" required value="{{ old('k') }}">
                                 </td>
                                 <td>
-                                    <select name="l" class="form-control">
-                                        <option value="A+">A+</option>
-                                        <option value="A">A</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B">B</option>
-                                        <option value="C+">C+</option>
-                                        <option value="C">C</option>
-
-                                    </select>
-                                </td>
+                                    <input type="text" name="l" class="form-control" required>
+                                </td> 
                                 <td><input type="text" name="m" class="form-control" required value="{{ old('m') }}">
                                 </td>
                                 <td><input type="text" name="n" class="form-control" required value="{{ old('n') }}">

@@ -170,7 +170,7 @@
                     <address>
                         Contact us <br>
                         <strong>Email</strong>: info@cctdharan.edu.np <br>
-                        <strong>Phone</strong>: 025-520228 <br>
+                        <strong>Phone</strong>: 025-570228 <br>
                         Dharan-14, Hattisar
                     </address>
                 </div>
