@@ -92,6 +92,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-4">
+                        {{-- Date Of Birth --}}
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="student_mobile">Mobile No. <span class="text-danger">*</span></label>
+                                <input id="student_mobile" class="form-control" type="tel" name="student_mobile" required
+                                    value="{{ $form->student_mobile }}">
+                            </div>
+                            @error('student_mobile')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        {{-- Mobile No --}}
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="dob">Date OF Birth <span class="text-danger">*</span></label>
+                                <input id="dob" class="form-control" type="date" name="dob" required
+                                    value="{{ $form->dob }}">
+                            </div>
+                            @error('dob')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
     
     
@@ -167,15 +191,7 @@
                                 </td>
                                 <td><input type="text" name="c" value="{{ $form->c }}" class="form-control" required></td>
                                 <td>
-                                    <select name="d" class="form-control">
-                                        <option value="A+" @if($form->d == 'A+') selected @endif>A+</option>
-                                        <option value="A" @if($form->d == 'A') selected @endif>A</option>
-                                        <option value="B+" @if($form->d == 'B+') selected @endif>B+</option>
-                                        <option value="B" @if($form->d == 'B') selected @endif>B</option>
-                                        <option value="C+" @if($form->d == 'C+') selected @endif>C+</option>
-                                        <option value="C" @if($form->d == 'C') selected @endif>C</option>
-    
-                                    </select>
+                                    <input type="text" name="d" value={{ $form->d }} class="form-control" >
                                 </td>
                                 <td><input type="text" name="e" value="{{ $form->e }}" class="form-control" required></td>
                                 <td><input type="text" name="f" value="{{ $form->f }}" class="form-control" required></td>
@@ -221,15 +237,7 @@
                                 </td>
                                 <td><input type="text" name="k" value="{{ $form->k }}" class="form-control" required></td>
                                 <td>
-                                    <select name="l" class="form-control">
-                                        <option value="A+" @if($form->l == 'A+') selected @endif>A+</option>
-                                        <option value="A" @if($form->l == 'A') selected @endif>A</option>
-                                        <option value="B+" @if($form->l == 'B+') selected @endif>B+</option>
-                                        <option value="B" @if($form->l == 'B') selected @endif>B</option>
-                                        <option value="C+" @if($form->l == 'C+') selected @endif>C+</option>
-                                        <option value="C" @if($form->l == 'C') selected @endif>C</option>
-    
-                                    </select>
+                                    <input type="text" name="l" value="{{ $form->l }}" class="form-control">
                                 </td>
                                 <td><input type="text" value="{{ $form->m }}" name="m" class="form-control" required></td>
                                 <td><input type="text" name="n" value="{{ $form->n }}" class="form-control" required></td>
@@ -282,7 +290,7 @@
                     </div>
     
                     <div class="row mt-4">
-                        
+                        @if ($form->citizenship)
                         <div class="col-md-3">
                             <div class="form-group">
                                 <a href="{{ $form->citizenship }}" target="__blank" class="btn btn-primary">
@@ -291,6 +299,7 @@
                                 </a>
                             </div>
                         </div>
+                        @endif
 
                         <div class="col-md-3">
                             <div class="form-group">
