@@ -235,7 +235,7 @@
                                 <td><input type="text" name="c" class="form-control" required value="{{ old('c') }}">
                                 </td>
                                 <td>
-                                    <input type="text" name="d" id="" class="form-control" required value="{{ old('d') }}">
+                                    <input type="text" name="d" class="form-control">
                                 </td>
                                 <td><input type="text" name="e" class="form-control" required value="{{ old('e') }}">
                                 </td>
@@ -287,8 +287,8 @@
                                 <td><input type="text" name="k" class="form-control" required value="{{ old('k') }}">
                                 </td>
                                 <td>
-                                   <input type="text" name="l" id="" class="form-control" required value="{{ old('l') }}">
-                                </td>
+                                    <input type="text" name="l" class="form-control" required>
+                                </td> 
                                 <td><input type="text" name="m" class="form-control" required value="{{ old('m') }}">
                                 </td>
                                 <td><input type="text" name="n" class="form-control" required value="{{ old('n') }}">

@@ -59,7 +59,7 @@
                     <div class="pt-md-4">
                         <span style="font-size: 24px; color: #E5E5E5;">Central Campus of Technology</span>
                         <br>
-                        <span style="font-size: 18px; color: #E5E5E5;" class="fw-light">  Dharan-14, Hattisar</span>
+                        <span style="font-size: 18px; color: #E5E5E5;" class="fw-light"> Dharan-14, Hattisar</span>
                     </div>
                 </div>
                 <div class="col-md-3 pb-sm-4">
@@ -188,7 +188,7 @@
         <div class="container">
          <nav class="navbar navbar-expand-lg navbar-light ">
              <div class="container-fluid">
-               <a class="navbar-brand btn btn-sm text-white fs-6" href="#" style="background-color: #ff0000;"><span style="color: yellow;">Apply</span> Online</a>
+               <a class="navbar-brand btn btn-sm text-white fs-6" href="/onlineform" style="background-color: #ff0000;"><span style="color: yellow;">Apply</span> Online</a>
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
                </button>
@@ -301,6 +301,7 @@
     </main>
 
 
+<<<<<<< HEAD
     <footer>
         <div style="background-color: #0077B6;" class="py-5 text-white">
             <div class="container">
@@ -321,6 +322,27 @@
                             <li><a href="" class="text-white text-decoration-none">Facilities</a></li>
                         </ul>
                     </div>
+=======
+    <footer class="mt-4 p-4 text-white" style="background-color: #0000cc">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <address>
+                        Contact us <br>
+                        <strong>Email</strong>: info@cctdharan.edu.np <br>
+                        <strong>Phone</strong>: 025-570228 <br>
+                        Dharan-14, Hattisar
+                    </address>
+                </div>
+
+                <div class="col-md-1">
+                    <address>
+                        <a href="/" class="text-white">Home</a> <br>
+                        <a href="/about-us" class="text-white">Who are we</a> <br>
+                        <a href="/sdepartment" class="text-white">Academics</a> <br>
+                        <a href="#" class="text-white">Components</a><br>
+                    </address>
+>>>>>>> 462030bb478d0dae7a5f1c562da7e5b5402ea78c
                 </div>
             </div>
         </div>
