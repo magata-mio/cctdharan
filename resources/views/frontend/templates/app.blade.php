@@ -300,49 +300,27 @@
     @yield('content')
     </main>
 
-
-<<<<<<< HEAD
-    <footer>
+<footer>
         <div style="background-color: #0077B6;" class="py-5 text-white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10">
                         <address>
-                            Contact us <br>
-                             <strong>Dharan-14,Hattisar</strong>
+                           <h4> Contact us</h4>
+                             <strong>Dharan-14,Hattisar</strong> <br>
                             <i class="fas fa-envelope"></i> info@cctdharan.edu.np <br>
                             <i class="fa fa-phone-square-alt" aria-hidden="true"></i> 025-570228
                         </address>
                     </div>
                     <div class="col-md-2">
+                        <h4>Quick Links</h4>
                         <ul>
-                            <li>Quick Links</li>
+                            
                             <li><a href="" class="text-white text-decoration-none">About us</a></li>
                             <li><a href="" class="text-white text-decoration-none">Who we are?</a></li>
                             <li><a href="" class="text-white text-decoration-none">Facilities</a></li>
                         </ul>
                     </div>
-=======
-    <footer class="mt-4 p-4 text-white" style="background-color: #0000cc">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-11">
-                    <address>
-                        Contact us <br>
-                        <strong>Email</strong>: info@cctdharan.edu.np <br>
-                        <strong>Phone</strong>: 025-570228 <br>
-                        Dharan-14, Hattisar
-                    </address>
-                </div>
-
-                <div class="col-md-1">
-                    <address>
-                        <a href="/" class="text-white">Home</a> <br>
-                        <a href="/about-us" class="text-white">Who are we</a> <br>
-                        <a href="/sdepartment" class="text-white">Academics</a> <br>
-                        <a href="#" class="text-white">Components</a><br>
-                    </address>
->>>>>>> 462030bb478d0dae7a5f1c562da7e5b5402ea78c
                 </div>
             </div>
         </div>
@@ -351,6 +329,9 @@
             <center>Powered By: <a href="https://codeitapps.com" class="text-white text-decoration-none">Code IT</a></center>
         </div>
     </footer>
+
+
+
 
 
 
