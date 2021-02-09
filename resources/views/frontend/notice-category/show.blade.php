@@ -1,21 +1,20 @@
 @extends('frontend.templates.app')
 
 @section('content')
-    <div class="container">
+    <div class="container py-5">
         <h3>{{ $category->name }}</h3>
         @foreach ($category->notices as $notice)
-           <div>
-                <div class="lead">{{ $notice->subject }}</div>
+           <div class="py-1">
+               
                 <a href="{{ $notice->file }}"  target="__blank">
-                    <i class="fas fa-download"></i> Download File
+                    <i class="fas fa-play"></i> {{ $notice->subject }} <span class="text-secondary">{{ $notice->created_at->diffForHumans() }}</span>
                 </a>
                  @if ($notice->description)
                      <p>{{ $notice->description }}</p>
                  @endif
-                 <br>
-                <p class="text-small fs-6 text-secondary">{{ $notice->created_at->diffForHumans() }}</p>
+                
            </div>  
-           <hr>   
+         
         @endforeach
     </div>
 @endsection

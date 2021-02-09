@@ -1,12 +1,17 @@
 *{
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 p{
-    color: #495057;
+    color: #767676;
 }
 
+a{
+    text-decoration: none;
+}
 
- .carousel-item{
-    transition: transform 2s ease, opacity .5s ease-out
- }
+.header {
+    display: flex;
+    align-items: center;
+}

@@ -50,10 +50,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $departments = Department::all();
     $notices = Notice::all();
     $categories = NoticeCategory::all();
     $popup = Popup::where('show',TRUE)->orderBy('created_at','DESC')->first();
-    return view('frontend.index',compact('notices','categories','popup'));
+    return view('frontend.index',compact('notices','categories','popup','departments'));
 });
 
 Auth::routes();
@@ -129,11 +130,73 @@ Route::get('sustainability-page',function(){
     return view('frontend.who_are_we.sustainability',compact('sustainability'));
 });
 
+Route::get('contact',function(){
+    return view('frontend.who_are_we.contact');
+});
+
 
 Route::get('facilities-page',function(){
     $facility = Facility::first();
     return view('frontend.facilities.facilities-page',compact('facility'));
 });
+
+
+Route::get('library',function(){
+    return view('frontend.facilities.library');
+});
+
+
+Route::get('extra-activities',function(){
+    return view('frontend.facilities.extra-curriculam');
+});
+
+Route::get('hostel',function(){
+    return view('frontend.facilities.hostel');
+});
+
+Route::get('transportation',function(){
+    return view('frontend.facilities.transportation');
+});
+
+Route::get('quarters',function(){
+    return view('frontend.facilities.quarters');
+});
+
+Route::get('multimedia',function(){
+    return view('frontend.facilities.multimedia');
+});
+
+Route::get('museam',function(){
+    return view('frontend.facilities.mesuem');
+});
+
+Route::get('lab',function(){
+    return view('frontend.facilities.lab');
+});
+
+Route::get('seminar-hall',function(){
+    return view('frontend.facilities.seminal-hall');
+});
+
+Route::get('cafeteria',function(){
+    return view('frontend.facilities.cafeteria');
+});
+
+Route::get('temple',function(){
+    return view('frontend.facilities.temple');
+});
+Route::get('botanical',function(){
+    return view('frontend.facilities.botanical');
+});
+
+Route::get('water-fountain',function(){
+    return view('frontend.facilities.water-fountain');
+});
+
+Route::get('other',function(){
+    return view('frontend.facilities.other');
+});
+
 
 
 Route::get('program-page',function(){
@@ -160,16 +223,6 @@ Route::get('facts-page',function(){
     $fact = Fact::first();
     return view('frontend.academic.facts',compact('fact'));
 });
-
-
-
-
-
-
-
-
-
-
 
 
 // Department

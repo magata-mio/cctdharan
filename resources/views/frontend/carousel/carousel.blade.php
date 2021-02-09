@@ -1,5 +1,5 @@
  {{-- Carousel --}}
- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+ {{-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner" style="max-height: 90vh">
       <div class="carousel-item active" style="max-height: 90vh">
         <img src="{{ asset('img/s3.jpg') }}" class="w-100" alt="..." style="max-height: 90vh">
@@ -33,4 +33,9 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </a>
-  </div>
+</div> --}}
+
+ <!-- BANNER -->
+ <div class="container-fluid" style="height: 550px; max-height:50vh; background-image: url(/img/Campus\ view.jpg);background-size:cover;background-position:bottom;">
+        
+ </div>
