@@ -301,8 +301,8 @@
     </main>
 
 
+<footer>
 
-    <footer>
         <div style="background-color: #0077B6;" class="py-5 text-white">
             <div class="container">
                 <div class="row">
@@ -331,6 +331,9 @@
             <center>Powered By: <a href="https://codeitapps.com" class="text-white text-decoration-none">Code IT</a></center>
         </div>
     </footer>
+
+
+
 
 
 
