@@ -180,54 +180,54 @@
           </li>
       
           {{-- Who are we? --}}
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="fas fa-address-card"></i>
-              <p>
-                Who are we?
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/cprofile" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>Campus Profile</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/about" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>About us</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/pedagogy/" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>Pedagogy</p>
-                </a>
-              </li>
+          <!--<li class="nav-item has-treeview">-->
+          <!--  <a href="#" class="nav-link">-->
+          <!--    <i class="fas fa-address-card"></i>-->
+          <!--    <p>-->
+          <!--      Who are we?-->
+          <!--      <i class="fas fa-angle-left right"></i>-->
+          <!--    </p>-->
+          <!--  </a>-->
+          <!--  <ul class="nav nav-treeview">-->
+          <!--    <li class="nav-item">-->
+          <!--      <a href="/cprofile" class="nav-link">-->
+          <!--        <i class="far fa-check-square"></i>-->
+          <!--        <p>Campus Profile</p>-->
+          <!--      </a>-->
+          <!--    </li>-->
+          <!--    <li class="nav-item">-->
+          <!--      <a href="/about" class="nav-link">-->
+          <!--        <i class="far fa-check-square"></i>-->
+          <!--        <p>About us</p>-->
+          <!--      </a>-->
+          <!--    </li>-->
+          <!--    <li class="nav-item">-->
+          <!--      <a href="/pedagogy/" class="nav-link">-->
+          <!--        <i class="far fa-check-square"></i>-->
+          <!--        <p>Pedagogy</p>-->
+          <!--      </a>-->
+          <!--    </li>-->
 
-              <li class="nav-item">
-                <a href="/sustainability" class="nav-link">
-                  <i class="far fa-check-square"></i>
-                  <p>Sustainability</p>
-                </a>
-              </li>
+          <!--    <li class="nav-item">-->
+          <!--      <a href="/sustainability" class="nav-link">-->
+          <!--        <i class="far fa-check-square"></i>-->
+          <!--        <p>Sustainability</p>-->
+          <!--      </a>-->
+          <!--    </li>-->
 
             
-            </ul>
-          </li>
+          <!--  </ul>-->
+          <!--</li>-->
 
            {{-- Facilities --}}
-          <li class="nav-item">
-            <a href="/facilities" class="nav-link">
-              <i class="fas fa-users-cog"></i>
-              <p>
-                Facilities  
-              </p>
-            </a>
-          </li>
+          <!--<li class="nav-item">-->
+          <!--  <a href="/facilities" class="nav-link">-->
+          <!--    <i class="fas fa-users-cog"></i>-->
+          <!--    <p>-->
+          <!--      Facilities  -->
+          <!--    </p>-->
+          <!--  </a>-->
+          <!--</li>-->
           
           {{-- Academic --}}
           <li class="nav-item has-treeview">

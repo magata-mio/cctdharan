@@ -16,7 +16,7 @@
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
 
-    {{-- Google Fonts --}}
+   
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -29,17 +29,17 @@
 <body>
     @isset($notices)
         <!-- NOTICE -->
-        <div class="container-fluid" style="background-color: #023EBA;" >
+        <div class="container-fluid" style="background-color: #1565C0;" >
             <div class="container">
                 <div class="row pt-2" style="height: 40px;">
                     <div class="col-1 text-right">
                         <p class="text-end" style="color: #E5E5E5;">Notice:</p>
                     </div>
                     <div class="col-11">
-                        <marquee behavior="" direction="" onmouseover="this.stop();" onmouseout="this.start();" class="col-md-10">
+                        <marquee behavior="" direction="" onmouseover="this.stop();" onmouseout="this.start();" class="col-md-11">
                             @foreach ($notices as $index => $notice)
                                 <span>
-                                    <a href="{{ route('frontend.notice', $notice->id) }}"
+                                    <a href="{{ route('frontend.notice-category', $notice->notice_category_id) }}"
                                         class="inline-block text-white text-decoration-none">{{ $notice->subject }} @if (count($notices) > $index + 1) | @endif</a>
                                 </span>
                             @endforeach
@@ -51,7 +51,7 @@
     @endisset
 
     <!-- LOGO AND INFO -->
-    <div class="container-fluid pb-4" style="background-color: #0077B6;">
+    <div class="container-fluid pb-4" style="background-color: #1E88E5;">
         <div class="container">
             <div class="row  header" style="min-height: 150px;">
                 <div class="col-md-9 items-center d-md-flex">
@@ -62,7 +62,7 @@
                         <span style="font-size: 18px; color: #E5E5E5;" class="fw-light"> Dharan-14, Hattisar</span>
                     </div>
                 </div>
-                <div class="col-md-3 pb-sm-4">
+                <div class="col-md-3 pb-sm-4 pt-md-4">
                     <div>
                         <span style="font-size: 18px; color: #E5E5E5;"><i class="fas fa-envelope"></i> info@cctdharan.edu.np</span> <br>
 
@@ -75,120 +75,12 @@
         </div>
     </div>
 
-    {{-- Navbar --}}
-    {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="color: #0000cc"><img src="{{ asset('img/logo.png') }}" alt=""
-                    width="64"> Central Campus of Technology</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse mx-auto" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Who we are?
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/campus-profile">Profile of Campus</a></li>
-                            <li><a class="dropdown-item" href="/about-us">About us</a></li>
-                            <li><a class="dropdown-item" href="/pedagogy-page">Pedagogy</a></li>
-                            <li><a class="dropdown-item" href="#">Sustainability</a></li>
-                            <li><a class="dropdown-item" href="#">Contact us</a></li>
-                        </ul>
-                    </li>
-
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Facilities
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Library</a></li>
-                            <li><a class="dropdown-item" href="#">Extra-curricular activities: </a></li>
-                            <li><a class="dropdown-item" href="#">Hostel</a></li>
-                            <li><a class="dropdown-item" href="#">Transportation</a></li>
-                            <li><a class="dropdown-item" href="#">Quarters</a></li>
-                            <li><a class="dropdown-item" href="#">Computers/Internet/Multimedia</a></li>
-                            <li><a class="dropdown-item" href="#">Museum</a></li>
-                            <li><a class="dropdown-item" href="#">Laboratories</a></li>
-                            <li><a class="dropdown-item" href="#">Seminar Hall</a></li>
-                            <li><a class="dropdown-item" href="#">Cafeteria</a></li>
-                            <li><a class="dropdown-item" href="#">Saraswoti Temple</a></li>
-                            <li><a class="dropdown-item" href="#">Botanical Garden (Under construction)</a></li>
-                            <li><a class="dropdown-item" href="#">Water Fountain</a></li>
-                            <li><a class="dropdown-item" href="#">Other Facilities:</a></li>
-                            <li><a class="dropdown-item" href="#">Botanical Garden (Under construction)</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Academics
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/program-page">Programs</a></li>
-                            <li><a class="dropdown-item" href="/sdepartments">Departments</a></li>
-                            <li><a class="dropdown-item" href="/facts-page">Fact, Figures and Fee Chart</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Components
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/gbody-page">Governing Bodies</a></li>
-                            <li><a class="dropdown-item" href="#">IQAC</a></li>
-                            <li><a class="dropdown-item" href="/faculties-member">Faculty Members</a></li>
-                            <li><a class="dropdown-item" href="#">Non Teaching Staff</a></li>
-                            <li><a class="dropdown-item" href="#">Student welfare</a></li>
-                            <li><a class="dropdown-item" href="#">Associations</a></li>
-                            <li><a class="dropdown-item" href="#">Free Student Union</a></li>
-                            <li><a class="dropdown-item" href="#">Other Associations</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Research & Publication
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/research-page">Research</a></li>
-                            <li><a class="dropdown-item" href="#">Publication</a></li>
-                            
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/faqs-page">FAQS</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/onlineform">Apply Online</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav> --}}
-
-    <!-- NAVBAR -->
+    
     <div class="container-fluid" style="background-color: #f6f6f6;">
         <div class="container">
          <nav class="navbar navbar-expand-lg navbar-light ">
              <div class="container-fluid">
-               <a class="navbar-brand btn btn-sm text-white fs-6" href="/onlineform" style="background-color: #ff0000;"><span style="color: yellow;">Apply</span> Online</a>
+               <a class="navbar-brand btn btn-sm text-white fs-6" href="/onlineform" style="background-color: #2979FF;"><span style="color: yellow;">Apply</span> Online</a>
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
                </button>
@@ -303,7 +195,7 @@
 
 <footer>
 
-        <div style="background-color: #0077B6;" class="py-5 text-white">
+        <div style="background-color: #1E88E5;" class="py-5 text-white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10">
@@ -318,16 +210,16 @@
                         <h4>Quick Links</h4>
                         <ul>
                             
-                            <li><a href="" class="text-white text-decoration-none">About us</a></li>
-                            <li><a href="" class="text-white text-decoration-none">Who we are?</a></li>
-                            <li><a href="" class="text-white text-decoration-none">Facilities</a></li>
+                            <li><a href="/about-us" class="text-white text-decoration-none">About us</a></li>
+                            <li><a href="/campus-profile" class="text-white text-decoration-none">Who we are?</a></li>
+                            <li><a href="/hostel" class="text-white text-decoration-none">Facilities</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     
-        <div style="background-color: #023EBA;" class="text-white p-1">
+        <div style="background-color: #1565C0;" class="text-white p-1">
             <center>Powered By: <a href="https://codeitapps.com" class="text-white text-decoration-none">Code IT</a></center>
         </div>
     </footer>

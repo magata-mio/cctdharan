@@ -5,6 +5,7 @@
         <h1 class="display-6 fs-3">Our Faculties Member</h1>
         <div class="row">
             <div class="col-md-12">
+                <div class="table-responsive">
                 <table class="table table-sm table-striped table-bordered" id="datatable">
                     <thead>
                         <tr>
@@ -34,6 +35,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
                 {{ $fmembers->render('pagination::bootstrap-4') }}
             </div>
         </div>

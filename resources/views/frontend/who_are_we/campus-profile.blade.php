@@ -2,15 +2,18 @@
 @section('content')
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-4">
-                <img src="{{ asset('img/campus view.jpg') }}" alt="" class="img-fluid">
-            </div>
+           
 
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <h1 class="text-uppercase">Profile of <span>Campus</span></h1>
                 <p>
                     Central Campus of Technology (CCT), a constituent campus of Tribhuvan University, inherits its present name and form from the erstwhile Institute of Applied Science and Technology (IASTech) established in Dharan in 1972. The campus is situated at an isolated and quiet knoll called “Hattisar” (altitude 428 meter) on the lap of spectacular Bijaypur hill north-east to main Dharan, a magnificent and well-off city in the Eastern part of Nepal. Bijaypur was the capital city of different dynasties for a long times span of history and famous religious and cultural place. 
                 </p>
+                <div class="row py-2">
+                    <div class="col-md-4">
+                        <img src="{{ asset('img/Campus view.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                </div>
                 <p>
                     Hattisar was used for husbandry for elephants of the kingdom. So, Hatti means elephant and Sar means place for in Nepali language. Thus, CCT is popularly known as Hattisar Campus in this region. Now the location of CCT is ward No. 14 of Dharan sub-metropolitan city. The campus premise spreads over an area of about 19½ bigaha (9.2 ha) of lush vegetation (260 49′ 08″ N – 260 49′ 25″ N and 870 17′ 13″ E – 870 17′ 24″ E). It is easily reachable from the main town by auto-rickshaw. One may also prefer to go on foot, in which case a shortcut trail may be used, it normally takes about 20 minutes from Bhanuchowk.
                 </p>

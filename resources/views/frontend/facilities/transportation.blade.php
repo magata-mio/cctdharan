@@ -10,7 +10,7 @@
                 </p>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <img src="{{ asset('img/Transportation mediums.jpg') }}" alt="" class="img-fluid">
                     </div>
                 </div>

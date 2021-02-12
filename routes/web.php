@@ -109,6 +109,15 @@ Route::get('notice-category/{id}',[PageController::class,'noticeCategory'])->nam
  * Who are we Menu
  */
 // Campus Profile
+Route::get('campus-chief',function(){
+    return view('frontend.message.campus-chief' );
+});
+
+Route::get('chairperson',function(){
+    return view('frontend.message.chairperson' );
+});
+
+
 Route::get('campus-profile',function(){
     $profile = CampusProfile::first();
         return view('frontend.who_are_we.campus-profile',compact('profile'));

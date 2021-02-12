@@ -5,7 +5,7 @@
         <h1>Library</h1>
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ asset('img/library.jpg') }}" alt="" class="img-fluid">
+                <img src="{{ asset('img/Library.jpg') }}" alt="" class="img-fluid">
             </div>
         </div>
 

@@ -59,7 +59,7 @@
                                 <select id="status" class="form-control" name="status">
                                     <option value="permanent" {{ $fmember->status == 'permanent' ? 'selected' : '' }}>Permanent</option>
                                     <option value="contract" {{ $fmember->status == 'contract' ? 'selected' : '' }}>Contract</option>
-                                    <option value="temporary" {{ $fmember->status == 'temporary' ? 'selected' : '' }}>Permanent</option>
+                                    <option value="part-time" {{ $fmember->status == 'part-time' ? 'selected' : '' }}>Permanent</option>
                                     <option value="daily" {{ $fmember->status == 'daily' ? 'selected' : '' }}>Daily</option>
                                 </select>
                             </div>

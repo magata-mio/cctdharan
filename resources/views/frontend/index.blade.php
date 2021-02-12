@@ -18,7 +18,7 @@
            <p>
             Central Campus of Technology, Dharan is the fore runner of food technology education in Nepal. To date, the campus has produced more than 500 highly qualified food technology graduates. Annually, nearly 25 percent of them go abroad for further studies. Ten percent of them find Government jobs and the rest go like hot cakes in various food industries on Nepal and abroad. The scope of food technology education in Nepal has increased dramatically in the past few years. As a result, by 2014, there are 11 academic institutions where food technology education is offered. In the light of recent trend in food technology education in Nepal.
            </p>
-            <a href="" style="color: #0077B6;">Readmore [+]</a>
+            <a href="/about-us" style="color: #0077B6;">Readmore [+]</a>
         </div>
     </div>
    </div>
@@ -42,7 +42,7 @@
                     CCT as an academic institution was established in 2028 B.S. During this span of life, the institution has been able to achieve its set goals and most of the objectives in the field of academic activities. 
                 </p>
             
-                <a href="" style="color: #0077B6;">Readmore [+]</a>
+                <a href="/campus-chief" style="color: #0077B6;">Readmore [+]</a>
             </div>
           </div>
 
@@ -60,7 +60,7 @@
                 Nepal is a country based on agro-economy. More than 67% of its population depends on agriculture. The geographical diversity of the nation provides favorable condition for diverse food products. The Tarai region is suitable for grain products like paddy, wheat and corn. Similarly, the hilly region is suitable for fruits and vegetables, along with the grain products. Likewise, the topography of the Himalayan region suits for the herbal medicinal plants. But, due to the lack of technically skilled man power, Nepal is yet unable to provide food security to its citizens. 
               </p>
           
-              <a href="" style="color: #0077B6;">Readmore [+]</a>
+              <a href="/chairperson" style="color: #0077B6;">Readmore [+]</a>
           </div>
           </div>
        </div>
@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-md-2">
             <div class="card" >
-                <img src="img/Library.jpg" class="card-img-top" alt="...">
+               <a href="/library"><img src="img/Library.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-title" style="background-color:#0077B6;">
                 <center style="color: #E5E5E5;">Library</center>
                 </div>
@@ -82,48 +82,58 @@
             </div>
 
             <div class="col-md-2">
+           <a href="/hostel">
             <div class="card" >
                 <img src="img/Boys Hostel.jpg" class="card-img-top" alt="...">
                 <div class="card-title" style="background-color:#0077B6;">
                 <center style="color: #E5E5E5;">Boy's Hostel</center>
                 </div>
             </div>
+           </a>
             </div>
 
             <div class="col-md-2">
-            <div class="card" >
-                <img src="img/Girls Hostel.jpg" class="card-img-top" alt="...">
-                <div class="card-title" style="background-color:#0077B6;">
-                <center style="color: #E5E5E5;">Girl's Hostel</center>
+            <a href="/hostel">
+                <div class="card" >
+                    <img src="img/Girls Hostel.jpg" class="card-img-top" alt="...">
+                    <div class="card-title" style="background-color:#0077B6;">
+                    <center style="color: #E5E5E5;">Girl's Hostel</center>
+                    </div>
                 </div>
-            </div>
+            </a>
             </div>
 
             <div class="col-md-2">
-            <div class="card" >
-                <img src="img/Football and cricket ground 2.jpg" class="card-img-top" alt="...">
-                <div class="card-title" style="background-color:#0077B6;">
-                <center style="color: #E5E5E5;">Extra-Curricular Activities</center>
+            <a href="/activities">
+                <div class="card" >
+                    <img src="img/Football and cricket ground 2.jpg" class="card-img-top" alt="...">
+                    <div class="card-title" style="background-color:#0077B6;">
+                    <center style="color: #E5E5E5;">Extra-Curricular Activities</center>
+                    </div>
                 </div>
-            </div>
+            </a>
             </div>
 
             <div class="col-md-2">
+           <a href="/transportation">
             <div class="card" >
                 <img src="img/Transportation mediums.jpg" class="card-img-top" alt="...">
                 <div class="card-title" style="background-color:#0077B6;">
                 <center style="color: #E5E5E5;">Transportation</center>
                 </div>
             </div>
+           </a>
             </div>
 
             <div class="col-md-2">
-            <div class="card" >
-                <img src="img/It room Library.jpg" class="card-img-top" alt="...">
-                <div class="card-title" style="background-color:#0077B6;">
-                <center style="color: #E5E5E5;">IT Room Library</center>
-                </div>
-            </div>
+                <a href="/multimedia">
+                    <div class="card" >
+                        <img src="img/It room Library.jpg" class="card-img-top" alt="...">
+                        <div class="card-title" style="background-color:#0077B6;">
+                        <center style="color: #E5E5E5;">IT Room Library</center>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -186,6 +196,15 @@
                 </div>
             </div>
         </div> 
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h1 class="text-uppercase display-6">Our <span style="color: #0077B6">Location</span></h1>
+        <div class="row">
+            <div class="col-md-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7121.258213402513!2d87.28340299706366!3d26.819935895903996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcd454e4bda1ff6d5!2sCentral%20Campus%20of%20Technology!5e0!3m2!1sen!2snp!4v1612842158950!5m2!1sen!2snp" class="w-100" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
         </div>
     </div>
 
