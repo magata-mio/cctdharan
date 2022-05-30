@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminFormController;
 use App\Http\Controllers\Admin\AdminNoticeCategoryController;
 use App\Http\Controllers\Admin\AdminPopupController;
+use App\Http\Controllers\Admin\AdminPrintFormController;
 use App\Http\Controllers\Admin\CampusProfileController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\FacilityController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Admin\FAQSController;
 use App\Http\Controllers\Admin\GoverningBodyController;
 use App\Http\Controllers\Admin\NonTeachingStaffController;
 use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\OnlineAdmissionController;
 use App\Http\Controllers\Admin\PedagogyController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\ResearchController;
@@ -54,6 +56,7 @@ Route::get('/', function () {
     $notices = Notice::all();
     $categories = NoticeCategory::all();
     $popup = Popup::where('show',TRUE)->orderBy('created_at','DESC')->first();
+
     return view('frontend.index',compact('notices','categories','popup','departments'));
 });
 
@@ -95,6 +98,14 @@ Route::resource('governingbodies',GoverningBodyController::class)->middleware('a
 Route::resource('faqs',FAQSController::class)->middleware('admin');
 Route::resource('research',ResearchController::class)->middleware('admin');
 Route::resource('facts',FactController::class)->middleware('admin');
+Route::get('print-form/{id}',AdminPrintFormController::class)->name('print.form')->middleware('admin');
+
+Route::get('/admission',[OnlineAdmissionController::class,'index'])->middleware('admin');
+Route::get('/admission/{id}',[OnlineAdmissionController::class,'show'])->middleware('admin');
+// Online Admission
+Route::get('/online-admission',[PageController::class,'onlineadmission']);
+Route::post('/online-admission',[PageController::class,'store']);
+
 /**
  * Front End Route
  * Only Front End Route are allowed here
@@ -105,6 +116,7 @@ Route::post('onlineform',PostFormController::class)->name('form');
 Route::get('notice/{id}',[PageController::class,'notice'])->name('frontend.notice');
 Route::get('notice-category/{id}',[PageController::class,'noticeCategory'])->name('frontend.notice-category');
 
+Route::get('nonteachingstafflist',[PageController::class,'nonteachingstaff']);
 /**
  * Who are we Menu
  */
@@ -250,3 +262,22 @@ Route::get('admitcard/{id}',function($id){
     $form = OnlineForm::findOrFail($id);
     return view('frontend.admitcard.show',compact('form'));   
 })->name('admitcard');
+
+// Student Welfare
+Route::get('studentwelfare',[PageController::class,'studentwelfare']);
+
+
+//Association
+Route::get('associations',[PageController::class,'association']);
+
+//Student Union
+Route::get('studentunion',[PageController::class,'studentunion']);
+
+// Other Association
+Route::get('otherassociations',[PageController::class,'otherassociation']);
+
+// IQAC
+Route::get('iqac',[PageController::class,'iqac']);
+
+// Publication
+Route::get('publication',[PageController::class,'publication']);

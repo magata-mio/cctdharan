@@ -34,6 +34,9 @@
                                 +2 Grade
                             </th>
                             <th>
+                                Marks Obtained
+                            </th>
+                            <th>
                                 Action
                             </th>
                         </thead>
@@ -60,6 +63,9 @@
                                     </td>
                                     <td>
                                         {{ $form->l }}
+                                    </td>
+                                    <td>
+                                        {{$form->marks}}
                                     </td>
                                     <td>
                                         <a href="{{ route('form.show',$form->id) }}" class="btn btn-primary btn-sm">

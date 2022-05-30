@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FacultyMember;
+use App\Models\OnlineAdmission;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $totalFacultyMembers = FacultyMember::count();
+        $onlineAdmission = OnlineAdmission::count();
+        return view('home',compact('totalFacultyMembers','onlineAdmission'));
     }
 }

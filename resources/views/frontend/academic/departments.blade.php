@@ -11,9 +11,9 @@
                     </div>
                     <div class="card-body">
                         <table class="table table-sm table-bordered table-striped">
-                            @foreach ($departments as $department)
+                            @foreach ($departments as $index=>$department)
                                 <tr>
-                                    <td>{{ $department->id }}</td>
+                                    <td>{{ ++$index }}</td>
                                     <td>{{ $department->name }}</td>
                                     <td><a href="/sdepartments/{{ $department->id }}" class="btn btn-sm text-white" style="background-color: #0077B6;">View</a></td>
                                 </tr>

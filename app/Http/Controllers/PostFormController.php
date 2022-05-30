@@ -29,26 +29,27 @@ class PostFormController extends Controller
             'a'=>'required',
             'b'=>'required',
             'c'=>'required',
-            'd'=>'required',
-            'e'=>'required',
-            'f'=>'required',
+            // 'd'=>'required',
+            // 'e'=>'required',
+            // 'f'=>'required',
             'g'=>'required',
             'h'=>'required',
             'i'=>'required',
             'j'=>'required',
             'k'=>'required',
-            'l'=>'required',
-            'm'=>'required',
-            'n'=>'required',
+            // 'l'=>'required',
+            // 'm'=>'required',
+            // 'n'=>'required',
             'o'=>'required',
             'p'=>'required',
+            'marks'=>'required|numeric|digits_between:1,3',
             'slcmarksheet'=> 'required|file|max:512',
             'slccharacter'=>'required|file|max:512',
             'ptranscript' => 'file|max:512|required',
             'pcharacter' => 'file|max:512|nullable',
             'citizenship'=>'file|max:512|nullable',
             'ppphoto'=>'required|file|max:512',
-            'bankslip'=>'required|file|max:512',
+            'bankslip'=>'nullable|file|max:512',
         ]);
         $onlineform = new OnlineForm();
         $onlineform->fill($request->except(['id',
@@ -71,6 +72,7 @@ class PostFormController extends Controller
         $onlineform->bankslip = Save::SaveImage($request->bankslip);
         
         $onlineform->save();
-        return redirect(route('admitcard',$onlineform->id))->with('success','Form Added');
+        // return redirect(route('admitcard',$onlineform->id))->with('success','Form Added');
+        return redirect()->back()->with('message','Form submitted');
     }
 }

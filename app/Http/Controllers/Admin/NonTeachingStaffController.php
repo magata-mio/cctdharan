@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\NonTeachingStaff;
 use Illuminate\Http\Request;
 
 class NonTeachingStaffController extends Controller
@@ -14,7 +15,8 @@ class NonTeachingStaffController extends Controller
      */
     public function index()
     {
-        //
+        $staffs = NonTeachingStaff::all();
+        return view('admin.non-teaching-staff.index',compact('staffs'));
     }
 
     /**
@@ -35,7 +37,21 @@ class NonTeachingStaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $staff = new NonTeachingStaff();
+        $staff->designation = $request->designation;
+        $staff->workplace = $request->workplace;
+        $staff->name = $request->name;
+        $staff->gender = $request->gender;
+        $staff->status = $request->status;
+       if($request->hasFile('image')){
+           $fileName = $request->image;
+           $newName = time() . $fileName->getClientOriginalName();
+           $fileName->move('nonteaching-staff-image',$newName);
+           $staff->image = 'nonteaching-staff-image/' . $newName;
+       }
+       $staff->save();
+       $request->session()->flash('message','Record Saved');
+       return redirect()->back();
     }
 
     /**
@@ -57,7 +73,8 @@ class NonTeachingStaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $staff = NonTeachingStaff::find($id);
+        return view('admin.non-teaching-staff.edit',compact('staff'));
     }
 
     /**
@@ -69,7 +86,21 @@ class NonTeachingStaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $staff = NonTeachingStaff::find($id);
+        $staff->designation = $request->designation;
+        $staff->workplace = $request->workplace;
+        $staff->name = $request->name;
+        $staff->gender = $request->gender;
+        $staff->status = $request->status;
+       if($request->hasFile('image')){
+           $fileName = $request->image;
+           $newName = time() . $fileName->getClientOriginalName();
+           $fileName->move('nonteaching-staff-image',$newName);
+           $staff->image = 'nonteaching-staff-image/' . $newName;
+       }
+       $staff->update();
+       $request->session()->flash('message','Record Updated Successfully');
+       return redirect()->back();
     }
 
     /**

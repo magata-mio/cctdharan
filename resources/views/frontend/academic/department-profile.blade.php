@@ -14,23 +14,23 @@
             <thead>
                 <tr>
                     <th>#</th>
+                     <th>Name</th>
+                      <th>Gender</th>
                     <th>Designation</th>
-                    <th>Gender</th>
-                    <th>Name</th>
                     <th>Department</th>
                     <th>Status</th>
                     <th>Photo</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($members as $member)
+                @foreach ($members as $index=>$member)
                     <tr>
-                        <td>{{ $member->id }}</td>
-                        <td>{{ $member->designation }}</td>
-                        <td>{{ $member->gender }}</td>
-                        <td>{{ $member->name }}</td>
+                        <td>{{ ++$index }}</td>
+                        <td>{{ ucfirst($member->name) }}</td>
+                         <td>{{ ucfirst($member->gender) }}</td>
+                        <td>{{ ucfirst($member->designation) }}</td>
                         <td>{{ $member->department->name }}</td>
-                        <td>{{ $member->status }}</td>
+                        <td>{{ ucfirst($member->status) }}</td>
                         <td><img src="{{ asset($member->image) }}" alt="" width="64"></td>
                     </tr>
                 @endforeach

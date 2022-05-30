@@ -2,10 +2,10 @@
 @section('content')
     <div class="container py-2">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header bg-primary">
-                        Edit Faculty Member
+                       <a href="/fmembers" class="btn btn-primary">Back</a>
                     </div>
                     <div class="card-body">
                         <form action="/fmembers/{{ $fmember->id }}" method="post" enctype="multipart/form-data">
@@ -59,7 +59,7 @@
                                 <select id="status" class="form-control" name="status">
                                     <option value="permanent" {{ $fmember->status == 'permanent' ? 'selected' : '' }}>Permanent</option>
                                     <option value="contract" {{ $fmember->status == 'contract' ? 'selected' : '' }}>Contract</option>
-                                    <option value="part-time" {{ $fmember->status == 'part-time' ? 'selected' : '' }}>Permanent</option>
+                                    <option value="part-time" {{ $fmember->status == 'part-time' ? 'selected' : '' }}>Part Time</option>
                                     <option value="daily" {{ $fmember->status == 'daily' ? 'selected' : '' }}>Daily</option>
                                 </select>
                             </div>
@@ -75,41 +75,7 @@
                 </div>
             </div>
     
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header bg-secondary">
-                        Members List
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-sm table-striped table-bordered" id="datatable">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Designation</th>
-                                    <th>Name</th>
-                                    <th>PHD</th>
-                                    <th>Department</th>
-                                    <th>Profile</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($fmembers as $fmember)
-                                    <tr>
-                                        <td>{{ $fmember->id }}</td>
-                                        <td>{{ $fmember->designation }}</td>
-                                        <td>{{ $fmember->name }}</td>
-                                        <td>{!!  $fmember->phd != null ? '<i class="fas fa-check"></i>' : ''  !!}</td>
-                                        <td>{{ $fmember->department->name }}</td>
-                                        <td><img src="{{ asset($fmember->image) }}" alt="" width="64"></td>
-                                        <td><a href="/fmembers/{{ $fmember->id }}/edit"><i class="fas fa-edit"></i></a></td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+         
         </div>
     </div>
 @endsection

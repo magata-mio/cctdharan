@@ -18,14 +18,14 @@
                 </p>
 
                 <div class="lead">
-                    "Central Campus of Technology will strive to transition into Deemed University of Food Science and Technology, making it one of the finest research stations for post-harvest technology of the SAARC Region."
+                   <b> "Central Campus of Technology will strive to transition into Deemed University of Food Science and Technology, making it one of the finest research stations for post-harvest technology of the SAARC Region."</b>
                 </div>
             </div>
         </div>
 
         <div class="row my-5">
             <div class="col-md-4 order-md-first">
-                <img src="{{ asset('img/Laboratory Building.jpg') }}" alt="" class="img-fluid">
+                <img src="{{ asset('img/s4.jpg') }}" alt="" class="img-fluid">
             </div>
             <div class="col-md-8">
                 <h1 class="text-uppercase">Our <span>Mission</span></h1>
@@ -42,7 +42,7 @@
                 </p>
 
                 <div class="lead">
-                    "To strengthen research facilities and develop post-harvest technology & allied programs to the point where Central Campus of Technology can be a deemed university in its own right."
+                   <b> "To strengthen research facilities and develop post-harvest technology & allied programs to the point where Central Campus of Technology can be a deemed university in its own right."</b>
                 </div>
             </div>
         </div>

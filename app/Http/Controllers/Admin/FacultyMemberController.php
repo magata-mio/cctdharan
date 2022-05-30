@@ -16,7 +16,8 @@ class FacultyMemberController extends Controller
      */
     public function index()
     {
-        //
+        $fmembers = FacultyMember::all();
+        return view('admin.faculty-menber.index',compact('fmembers'));
     }
 
     /**
@@ -133,6 +134,8 @@ class FacultyMemberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = FacultyMember::find($id);
+        $member->delete();
+        return redirect()->back();
     }
 }

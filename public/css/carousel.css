@@ -1,0 +1,97 @@
+
+.banner .carousel button.carousel-control-prev {
+    background-color: #ffffff;
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  
+  .banner .carousel button.carousel-control-next {
+    background-color: #ffffff;
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  
+  .banner .carousel .carousel-inner .carousel-item img {
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  .banner .carousel .carousel-inner .carousel-item .cover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.411);
+  }
+  
+  .banner .carousel .carousel-inner .carousel-item .carousel-caption {
+    max-height: 300px;
+    /* display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); */
+  }
+  
+  .banner .carousel .carousel-inner .carousel-item .carousel-caption h1 {
+    color: #ffffff;
+    font-size: 3.5rem;
+  }
+  
+  .banner .carousel .carousel-inner .carousel-item .carousel-caption h1 span {
+    color: #e5e900;
+  }
+  
+  .banner .carousel .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 18px;
+    color: white;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .banner .carousel button.carousel-control-prev,
+    .banner .carousel button.carousel-control-next {
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+    }
+    .banner .carousel .carousel-inner .carousel-item img {
+      height: 300px;
+    }
+    .banner .carousel .carousel-inner .carousel-item .carousel-caption h1 {
+      font-size: 2rem;
+    }
+    .banner .carousel .carousel-inner .carousel-item .carousel-caption p {
+      font-size: 14px;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .banner .carousel .carousel-inner .carousel-item .carousel-caption h1 {
+      font-size: 1.2rem;
+    }
+    .banner .carousel .carousel-inner .carousel-item .carousel-caption p {
+      font-size: 11px;
+    }
+  }
+  

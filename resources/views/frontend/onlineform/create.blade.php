@@ -7,8 +7,11 @@
 @endif
 @section('content')
     <div class="container my-5">
+        @if(session('message'))
+            <div class='alert alert-success alert-sm'>{{ session('message') }}</div>
+        @endif
         <h1 class="fs-4">Online Form</h1>
-        <p>Admission open for Bachlore Degree in Nutrition and Dietetics</p>
+        <p>Admission form for Bachelor in Information Technology</p>
         <form action="{{ route('form') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="lead mt-4 text-danger">Personal Details</div>
@@ -207,9 +210,9 @@
                                 <th>Board <span class="text-danger">*</span></th>
                                 <th>Passed Year <span class="text-danger">*</span></th>
                                 <th>Full marks/credit <span class="text-danger">*</span></th>
-                                <th>Marks obtain/grade <span class="text-danger">*</span></th>
-                                <th>Percentage/GPA <span class="text-danger">*</span></th>
-                                <th>Division/GPA <span class="text-danger">*</span></th>
+                                <th>Marks obtain/grade </th>
+                                <th>Percentage/GPA </th>
+                                <th>Division/GPA </span></th>
                                 <th>Symbol No <span class="text-danger">*</span></th>
                                 <th>School Name <span class="text-danger">*</span></th>
                             </tr>
@@ -232,14 +235,14 @@
                                         <option value="others">Others</option>
                                     </select>
                                 </td>
-                                <td><input type="text" name="c" class="form-control" required value="{{ old('c') }}">
+                                <td><input type="text" name="c" class="form-control" required  value="{{ old('c') }}">
                                 </td>
                                 <td>
                                     <input type="text" name="d" class="form-control">
                                 </td>
-                                <td><input type="text" name="e" class="form-control" required value="{{ old('e') }}">
+                                <td><input type="text" name="e" class="form-control"  value="{{ old('e') }}">
                                 </td>
-                                <td><input type="text" name="f" class="form-control" required value="{{ old('f') }}">
+                                <td><input type="text" name="f" class="form-control"  value="{{ old('f') }}">
                                 </td>
                                 <td><input type="text" name="g" class="form-control" required value="{{ old('g') }}">
                                 </td>
@@ -259,9 +262,9 @@
                                 <th>Board <span class="text-danger">*</span></th>
                                 <th>Passed Year <span class="text-danger">*</span></th>
                                 <th>Full marks/credit <span class="text-danger">*</span></th>
-                                <th>Marks obtain/grade <span class="text-danger">*</span></th>
-                                <th>Percentage/GPA <span class="text-danger">*</span></th>
-                                <th>Division/GPA <span class="text-danger">*</span></th>
+                                <th>Marks obtain/grade </th>
+                                <th>Percentage/GPA </th>
+                                <th>Division/GPA </th>
                                 <th>Symbol No <span class="text-danger">*</span></th>
                                 <th>College Name <span class="text-danger">*</span></th>
                             </tr>
@@ -287,11 +290,11 @@
                                 <td><input type="text" name="k" class="form-control" required value="{{ old('k') }}">
                                 </td>
                                 <td>
-                                    <input type="text" name="l" class="form-control" required>
+                                    <input type="text" name="l" class="form-control" >
                                 </td> 
-                                <td><input type="text" name="m" class="form-control" required value="{{ old('m') }}">
+                                <td><input type="text" name="m" class="form-control"  value="{{ old('m') }}">
                                 </td>
-                                <td><input type="text" name="n" class="form-control" required value="{{ old('n') }}">
+                                <td><input type="text" name="n" class="form-control"  value="{{ old('n') }}">
                                 </td>
                                 <td><input type="text" name="o" class="form-control" required value="{{ old('o') }}">
                                 </td>
@@ -301,7 +304,15 @@
                         </tbody>
                     </table>
                 </div>
-
+                
+                <div class='form-group py-2'>
+                    <label for="marks">BIT Entrance Score <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control @error('marks') is-invalid @enderror" value="{{old('marks')}}" name="marks" required >
+                    @error('marks')
+                        <small class='text-danger invalid-feedback'></small>
+                    @enderror
+                </div>
+                
                 {{-- Documents --}}
                 <p><span class="fw-bold">Note:</span> File size must be maximum 512 KB</p>
                 <p>Reduce your file size from this link: <a href="https://tinypng.com/" target="_blank">Reduce File Size</a>
@@ -374,24 +385,24 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="bankslip">Deposit Slip of Nepal Bank Limited Dharan <span
-                                    class="text-danger">*</span></label>
-                            <input id="bankslip" class="form-control-file" type="file" name="bankslip" required
-                                value="{{ old('bankslip') }}">
-                            @error('bankslip')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
+    
+                    <!--Nepal Bank Slip-->
+                    <!--<div class="col-md-3">-->
+                    <!--    <div class="form-group">-->
+                    <!--        <label for="bankslip">Deposit Slip of Nepal Bank Limited Dharan </label>-->
+                    <!--        <input id="bankslip" class="form-control-file" type="file" name="bankslip" -->
+                    <!--            value="{{ old('bankslip') }}">-->
+                    <!--        @error('bankslip')-->
+                    <!--            <div class="text-danger">{{ $message }}</div>-->
+                    <!--        @enderror-->
+                    <!--    </div>-->
+                    <!--</div>-->
 
 
                 </div>
 
             </div>
-            <div class="text-danger">If You Have Any Problem Please Contact <a href="tel:+977986216429" class="text-decoration-none text-danger">986216429</a>/ <a href="tel:+9779852051545" class="text-decoration-none text-danger">9852051545</a> </div>
+            <div class="text-danger">If You Have Any Problem Please Contact  <a href="tel:+9779852051545" class="text-decoration-none text-danger">9852051545</a> / <a href="tel:+9779852056782" class="text-decoration-none text-danger">9852056782</a> </div>
             <button type="submit" class="btn btn-danger mt-4">Apply Now</button>
         </form>
     </div>

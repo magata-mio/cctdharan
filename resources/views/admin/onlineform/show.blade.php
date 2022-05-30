@@ -3,6 +3,9 @@
 @section('content')
     <div class="container-fluid pt-4">
         <div class="card">
+            <a href="{{ route('print.form',$form->id) }}" class="btn btn-primary float-left">
+                <i class="fa fa-print" aria-hidden="true"></i> Print Form
+            </a>
             <div class="card-header">
                 <strong>Online Form</strong>
             </div>
@@ -191,11 +194,11 @@
                                 </td>
                                 <td><input type="text" name="c" value="{{ $form->c }}" class="form-control" required></td>
                                 <td>
-<<<<<<< HEAD
+
                                     <input type="text" name="d" id="" required class="form-control" required value="{{ $form->d }}">
-=======
-                                    <input type="text" name="d" value={{ $form->d }} class="form-control" >
->>>>>>> 462030bb478d0dae7a5f1c562da7e5b5402ea78c
+
+                                    <!--<input type="text" name="d" value={{ $form->d }} class="form-control" >-->
+
                                 </td>
                                 <td><input type="text" name="e" value="{{ $form->e }}" class="form-control" required></td>
                                 <td><input type="text" name="f" value="{{ $form->f }}" class="form-control" required></td>
@@ -241,12 +244,11 @@
                                 </td>
                                 <td><input type="text" name="k" value="{{ $form->k }}" class="form-control" required></td>
                                 <td>
-<<<<<<< HEAD
+
                                     <input type="text" name="l" id="" required class="form-control" required value="{{ $form->l }}">
-                                  
-=======
-                                    <input type="text" name="l" value="{{ $form->l }}" class="form-control">
->>>>>>> 462030bb478d0dae7a5f1c562da7e5b5402ea78c
+
+                                    <!--<input type="text" name="l" value="{{ $form->l }}" class="form-control">-->
+
                                 </td>
                                 <td><input type="text" value="{{ $form->m }}" name="m" class="form-control" required></td>
                                 <td><input type="text" name="n" value="{{ $form->n }}" class="form-control" required></td>
@@ -256,6 +258,13 @@
                         </tbody>
                     </table>
     
+                    <div class='form-group py-2'>
+                        <label for="marks">BIT Entrance Score <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control @error('marks') is-invalid @enderror" value="{{$form->marks}}" name="marks" required >
+                        @error('marks')
+                            <small class='text-danger invalid-feedback'></small>
+                        @enderror
+                    </div>
                     {{-- Documents --}}
                     <div class="row">
                         <div class="col-md-3">

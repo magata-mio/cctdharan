@@ -29,7 +29,7 @@
                    <li>Faculty development programs</li>
                    <li>Faculty appraisal system</li>
                    <li>Online class log record and attendance</li>
-                   <li>Students Quality Circle (SQC)/li>
+                   <li>Students Quality Circle (SQC)</li>
                </ol>
            </div>
        </div>

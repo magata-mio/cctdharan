@@ -21,15 +21,15 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($fmembers as $fmember)
+                        @foreach ($fmembers as $index=> $fmember)
                             <tr>
-                                <td>{{ $fmember->id }}</td>
-                                <td>{{ $fmember->designation }}</td>
-                                <td>{{ $fmember->name }}</td>
-                                <td>{{ $fmember->gender }}</td>
+                                <td>{{ ++$index }}</td>
+                                <td>{{ ucfirst($fmember->designation) }}</td>
+                                <td>{{ ucfirst($fmember->name) }}</td>
+                                <td>{{ ucfirst($fmember->gender) }}</td>
                                 <td>{{ $fmember->department->name }}</td>
                                 <td>{!! $fmember->phd != null ? '<i class="fas fa-check"></i>' : ''  !!}</td>
-                                <td>{{ $fmember->status }}</td>
+                                <td>{{ ucfirst($fmember->status) }}</td>
                                 <td><img src="{{ asset($fmember->image) }}" alt="" width="64"></td>
                             </tr>
                         @endforeach

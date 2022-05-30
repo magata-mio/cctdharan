@@ -5,7 +5,7 @@
         <strong>{{ $notice->subject }}</strong>
         @if ($notice->description)
             <p>
-                {{ $notice->description }}
+                {!! $notice->description !!}
                 @endif
             </p>
             @if($notice->file)
