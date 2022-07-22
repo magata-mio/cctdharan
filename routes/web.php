@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminNoticeCategoryController;
 use App\Http\Controllers\Admin\AdminPopupController;
 use App\Http\Controllers\Admin\AdminPrintFormController;
 use App\Http\Controllers\Admin\CampusProfileController;
+use App\Http\Controllers\admin\CarouselSliderController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\Admin\FactController;
@@ -54,13 +55,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $departments = Department::all();
     $notices = Notice::all();
+    $examNotice = Notice::where('notice_category_id',4)->get();
+    $generalNotice = Notice::where('notice_category_id',4)->get();
     $categories = NoticeCategory::all();
     $popup = Popup::where('show',TRUE)->orderBy('created_at','DESC')->first();
 
-    return view('frontend.index',compact('notices','categories','popup','departments'));
+    return view('frontend.index',compact('notices','categories','popup','departments','examNotice','generalNotice'));
 });
 
-Auth::routes();
+Auth::routes(['register'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -281,3 +284,6 @@ Route::get('iqac',[PageController::class,'iqac']);
 
 // Publication
 Route::get('publication',[PageController::class,'publication']);
+
+// Carousel
+Route::resource('carousel', CarouselSliderController::class)->middleware('admin');

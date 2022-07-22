@@ -10,7 +10,7 @@
                     <i class="fas fa-play"></i> {{ $notice->subject }} <span class="text-secondary">{{ $notice->created_at->diffForHumans() }}</span>
                 </a>
                  @if ($notice->description)
-                     <p>{{ $notice->description }}</p>
+                     <p>{{!! $notice->description !!}}</p>
                  @endif
                 
            </div>  

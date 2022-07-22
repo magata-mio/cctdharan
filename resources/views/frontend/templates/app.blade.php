@@ -8,7 +8,7 @@
         content="Technical College, Microbiology,Tribhuvan University,College in Dharan, College in Kosi, StudyFood Technology, Study BTech">
     <meta name="google-site-verification" content="I1-oGK88pGmMV5zWSj4MB0JXfNPzx884-UCOb4KhoG8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="{{ asset('img/logo.ico') }}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -87,6 +87,9 @@
                                 target="_blank" title="facebook">
                                 <i class="fab fa-facebook-square fs-4"></i>
                                 <span></span>
+                            </a>
+                            <a href="https://www.cctdharan.edu.np/webmail" class="badge border mx-1 text-white text-decoration-none" target="_blank">
+                                <span>Login</span>
                             </a>
                         </div>
                         <div class="contact">

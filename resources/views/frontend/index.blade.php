@@ -48,7 +48,7 @@
                         <h1 class="fs-4 text-1">Notice (Examination)</h1>
                     </div>
                     <ul class="p-0 list-unstyled">
-                        @foreach ($notices->take(4) as $item)
+                        @foreach ($examNotice->take(4) as $item)
                         <li>
                             <a href="{{ $item->file }}" target="__blank" class="text-decoration-none">
                                 <p class="text-muted m-0">
@@ -63,8 +63,8 @@
                         <hr>
                         @endforeach                        
                     </ul>
-                    @foreach ($categories->take(1) as $category)
-                           <a href="/notice-category/{{ $category->id }}" class="btn bg-1 shadow-none text-2 mt-3 ">
+                    @foreach ($examNotice->take(1) as $item)
+                           <a href="/notice-category/{{ $item->notice_category_id }}" class="btn bg-1 shadow-none text-2 mt-3 ">
                             <span>More</span>
                             <i class="fas fa-angle-double-right"></i>
                         </a>
@@ -149,7 +149,6 @@
 
     <!-- MESSAGE FROM CAMPUS CHIEF -->
     <div style="background-color: #f8f8f8;" class="py-4">
-        .
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -211,7 +210,7 @@
                                 {{-- <hr class="w-50 bg-1 m-0 p-0"> --}}
                             </div>
                                 <ul class="list-unstyled">
-                                    @foreach ($notices->take(5)  as $item)
+                                    @foreach ($notices->take(2)  as $item)
                                     <li>
                                         <a href="{{ $item->file }}" target="__blank" class="text-decoration-none">
                                             <p class="text-muted m-0">
@@ -226,14 +225,45 @@
                                     <hr>
                                     @endforeach    
                                     
-                                    @foreach ($categories->take(1) as $category)
-                                       <a href="/notice-category/{{ $category->id }}" class="btn bg-1 shadow-none text-2 mt-3 ">
-                                        <span>More</span>
-                                        <i class="fas fa-angle-double-right"></i>
-                                    </a>
-                                   @endforeach
+                                    @foreach ($generalNotice->take(1)  as $item)
+                                   <a href="/notice-category/{{ $item->notice_category_id }}" class="btn bg-1 shadow-none text-2 mt-3 ">
+                                    <span>More</span>
+                                    <i class="fas fa-angle-double-right"></i>
+                                </a>
+                               @endforeach
                                     
                                 </ul>
+                        </div>
+                    </div>
+                    {{-- Latest Events --}}
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <h4>Latest Events</h4>
+                            <p class="mb-0">
+                                B.Tech. Food Technology <br>
+                                Orientation Program 2079/01/08 <br>
+                                Central Campus of Technology, Dharan
+                            </p>
+                            
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="img-bx">
+                                        <img src="{{ asset('img/events/pic-1.jpg') }}" class="img-fluid" title="Orientation Program" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="img-bx">
+                                        <img src="{{ asset('img/events/btech orientation.jpg') }}" class="img-fluid" title="Orientation Program" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="img-bx">
+                                        <img src="{{ asset('img/events/pic-2.jpg') }}" class="img-fluid" title="Orientation Program" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Our Department -->
@@ -700,13 +730,13 @@
                 </div>
                 <!-- Slider End -->
                 <!-- Slider Arrow Start -->
-                <div class="arrow_pre">
+                <div class="arrow_pre admin_arrow_pre">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="m12.707 7.707-1.414-1.414L5.586 12l5.707 5.707 1.414-1.414L8.414 12z" />
                         <path d="M16.293 6.293 10.586 12l5.707 5.707 1.414-1.414L13.414 12l4.293-4.293z" />
                     </svg>
                 </div>
-                <div class="arrow_next">
+                <div class="arrow_next admin_arrow_next">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M10.296 7.71 14.621 12l-4.325 4.29 1.408 1.42L17.461 12l-5.757-5.71z" />
                         <path d="M6.704 6.29 5.296 7.71 9.621 12l-4.325 4.29 1.408 1.42L12.461 12z" />

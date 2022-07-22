@@ -26,7 +26,9 @@ class NoticeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   $categories = NoticeCategory::all();
+    {  
+        
+        $categories = NoticeCategory::orderBy('id', 'desc')->get();
         $notices = Notice::all();
         $notices->load('category');
         return view('admin.notice.create',compact('categories','notices'));

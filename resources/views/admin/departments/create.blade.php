@@ -5,8 +5,6 @@
         <div class="col-md-12">
          <form action="/departments" method="post">
              @csrf
-          
- 
              <div class="form-group">
                  <label for="name"><h4>Title</h4></label>
                  <input id="name" class="form-control" type="text" name="name" placeholder="Department Name">

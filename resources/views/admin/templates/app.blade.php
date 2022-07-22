@@ -298,8 +298,6 @@
                   <p>Faculty Members</p>
                 </a>
               </li>
-
-
               <li class="nav-item">
                 <a href="/nonteachingstaffs" class="nav-link">
                   <i class="far fa-check-square"></i>
@@ -323,9 +321,7 @@
                   <i class="far fa-check-square"></i>
                   <p>Add Other Associations</p>
                 </a>
-              </li>
-            
-             
+              </li>             
             </ul>
           </li>
 
@@ -338,8 +334,7 @@
               </p>
             </a>
           </li>
-
-        
+       
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fas fa-bullhorn"></i>
@@ -373,7 +368,26 @@
           
             </ul>
           </li>
-          
+
+          {{-- Slider & Carousel --}}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="far fa-images"></i>
+              <p>
+                Slider
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('carousel.index') }}" class="nav-link">
+                  <i class="far fa-check-square"></i>
+                  <p>Carousel</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
             <a href="{{ route('form.index') }}" class="nav-link">

@@ -95,6 +95,13 @@ section.about .title:after{
     border: 1px solid #333D79FF;
     background-color: #333D79FF;
 }
+/* Image Bx */
+.img-bx img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin: 5px 0;
+}
 /* Responsive */
 @media screen and (max-width:768px){
     .header .logo{
@@ -158,3 +165,4 @@ marquee.marquee{
     transform: translateY(-50%);
     z-index: 1111;
 }
+

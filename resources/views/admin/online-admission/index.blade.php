@@ -8,7 +8,7 @@
                         Online Admission
                     </div>
                     <div class="card-body">
-                        <table class="table table-stripe" id='datatable'>
+                        <table class="table table-stripe table-responsive" id='datatable'>
                             <thead>
                                 <tr>
                                     <th>#</th>

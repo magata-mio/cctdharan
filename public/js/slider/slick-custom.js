@@ -47,9 +47,9 @@ $(document).ready(function () {
       slidesToShow: 5,
       slidesToScroll: 1,
       autoplay: true,
-      arrows: false,
-      prevArrow: '.arrow_pre',
-      nextArrow: '.arrow_next',
+      arrows: true,
+      prevArrow: '.admin_arrow_pre',
+      nextArrow: '.admin_arrow_next',
       autoplaySpeed: 5000,
       responsive: [
           {
